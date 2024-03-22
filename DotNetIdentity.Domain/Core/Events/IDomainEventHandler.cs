@@ -1,6 +1,6 @@
 ﻿using MediatR;
 
-namespace AspNetNetwork.Domain.Common.Core.Events;
+namespace DotNetIdentity.Domain.Core.Events;
 
 /// <summary>
 /// Represents a domain event handler interface.

@@ -1,9 +1,9 @@
-using AspNetNetwork.Application.ApiHelpers.Responses;
-using AspNetNetwork.Application.Core.Abstractions.Messaging;
-using AspNetNetwork.Domain.Common.Core.Primitives.Result;
-using AspNetNetwork.Domain.Common.ValueObjects;
+using DotNetIdentity.Application.ApiHelpers.Responses;
+using DotNetIdentity.Application.Core.Abstractions.Messaging;
+using DotNetIdentity.Domain.Core.Primitives.Result;
+using DotNetIdentity.Domain.ValueObjects;
 
-namespace AspNetNetwork.Micro.IdentityAPI.Mediatr.Commands.Login;
+namespace DotNetIdentity.Api.Mediatr.Commands.Login;
 
 /// <summary>
 /// Represents the login command record class.

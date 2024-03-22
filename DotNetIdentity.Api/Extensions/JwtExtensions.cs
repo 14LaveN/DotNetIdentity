@@ -2,11 +2,11 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 using System.Text.Json;
-using AspNetNetwork.Application.Core.Settings.User;
-using AspNetNetwork.Domain.Identity.Entities;
+using DotNetIdentity.Application.Core.Settings.User;
+using DotNetIdentity.Domain.Entities;
 using Microsoft.IdentityModel.Tokens;
 
-namespace AspNetNetwork.Micro.IdentityAPI.Extensions;
+namespace DotNetIdentity.Api.Extensions;
 
 /// <summary>
 /// Represents the json web token extensions class.

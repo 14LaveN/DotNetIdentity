@@ -1,8 +1,8 @@
-﻿using AspNetNetwork.Application.Core.Errors;
-using AspNetNetwork.Application.Core.Extensions;
+﻿using DotNetIdentity.Application.Core.Errors;
+using DotNetIdentity.Application.Core.Extensions;
 using FluentValidation;
 
-namespace AspNetNetwork.Micro.IdentityAPI.Mediatr.Commands.ChangePassword;
+namespace DotNetIdentity.Api.Mediatr.Commands.ChangePassword;
 
 /// <summary>
 /// Represents the <see cref="ChangePasswordCommand"/> validator.

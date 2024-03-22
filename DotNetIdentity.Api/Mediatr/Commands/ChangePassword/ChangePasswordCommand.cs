@@ -1,7 +1,7 @@
-﻿using AspNetNetwork.Application.Core.Abstractions.Messaging;
-using AspNetNetwork.Domain.Common.Core.Primitives.Result;
+﻿using DotNetIdentity.Application.Core.Abstractions.Messaging;
+using DotNetIdentity.Domain.Core.Primitives.Result;
 
-namespace AspNetNetwork.Micro.IdentityAPI.Mediatr.Commands.ChangePassword;
+namespace DotNetIdentity.Api.Mediatr.Commands.ChangePassword;
 
 /// <summary>
 /// Represents the change password command record class.

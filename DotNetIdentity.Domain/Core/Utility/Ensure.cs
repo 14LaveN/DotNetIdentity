@@ -1,4 +1,4 @@
-﻿namespace AspNetNetwork.Domain.Core.Utility;
+﻿namespace DotNetIdentity.Domain.Core.Utility;
 
 /// <summary>
 /// Contains assertions for the most common application checks.

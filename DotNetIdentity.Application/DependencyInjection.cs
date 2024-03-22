@@ -1,14 +1,11 @@
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using AspNetNetwork.Application.Common;
-using AspNetNetwork.Application.Core.Abstractions.Common;
-using AspNetNetwork.Application.Core.Abstractions.Helpers.JWT;
-using AspNetNetwork.Application.Core.Helpers.JWT;
-using AspNetNetwork.Application.Core.Helpers.Metric;
-using AspNetNetwork.Email.Emails;
-using AspNetNetwork.Email.Emails.Settings;
+using DotNetIdentity.Application.Common;
+using DotNetIdentity.Application.Core.Abstractions.Common;
+using DotNetIdentity.Application.Core.Abstractions.Helpers.JWT;
+using DotNetIdentity.Application.Core.Helpers.JWT;
+using DotNetIdentity.Application.Core.Helpers.Metric;
 
-namespace AspNetNetwork.Application;
+namespace DotNetIdentity.Application;
 
 public static class DependencyInjection
 {

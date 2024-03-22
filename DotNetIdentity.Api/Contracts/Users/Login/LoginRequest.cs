@@ -1,4 +1,4 @@
-namespace AspNetNetwork.Micro.IdentityAPI.Contracts.Users.Login;
+namespace DotNetIdentity.Api.Contracts.Users.Login;
 
 /// <summary>
 /// Represents the login request record class.

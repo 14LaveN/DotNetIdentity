@@ -1,14 +1,12 @@
-using AspNetNetwork.Database.Common;
+using DotNetIdentity.Database.Identity.Data.Interfaces;
 using Microsoft.EntityFrameworkCore.Storage;
-using AspNetNetwork.Database.Identity.Data.Interfaces;
-using AspNetNetwork.Domain.Identity.Entities;
 
-namespace AspNetNetwork.Database.Identity.Data.Repositories;
+namespace DotNetIdentity.Database.Identity.Data.Repositories;
 
 /// <summary>
 /// Represents the user unit of work.
 /// </summary>
-public sealed class UserUnitOfWork(BaseDbContext userDbContext)
+public sealed class UserUnitOfWork(UserDbContext userDbContext)
     : IUserUnitOfWork
 {
     /// <summary>

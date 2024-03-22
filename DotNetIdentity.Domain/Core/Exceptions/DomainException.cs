@@ -1,6 +1,7 @@
-﻿using AspNetNetwork.Domain.Common.Core.Primitives;
+﻿using DotNetIdentity.Domain.Common.Core.Primitives;
+using DotNetIdentity.Domain.Core.Primitives;
 
-namespace AspNetNetwork.Domain.Common.Core.Exceptions;
+namespace DotNetIdentity.Domain.Core.Exceptions;
 
 /// <summary>
 /// Represents an exception that occurred in the domain.

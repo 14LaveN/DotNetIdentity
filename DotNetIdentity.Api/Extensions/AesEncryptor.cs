@@ -1,7 +1,7 @@
 using System.Security.Cryptography;
 using System.Text;
 
-namespace AspNetNetwork.Micro.IdentityAPI.Extensions;
+namespace DotNetIdentity.Api.Extensions;
 
 /// <summary>
 /// Represents the aes encryptor class.

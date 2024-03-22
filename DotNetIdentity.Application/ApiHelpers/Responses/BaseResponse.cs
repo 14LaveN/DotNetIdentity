@@ -1,7 +1,7 @@
-using AspNetNetwork.Domain.Common.Core.Primitives.Result;
-using AspNetNetwork.Domain.Common.Enumerations;
+using DotNetIdentity.Domain.Core.Primitives.Result;
+using DotNetIdentity.Domain.Enumerations;
 
-namespace AspNetNetwork.Application.ApiHelpers.Responses;
+namespace DotNetIdentity.Application.ApiHelpers.Responses;
 
 /// <summary>
 /// Represents the base response class.

@@ -1,9 +1,8 @@
+using DotNetIdentity.RabbitMq.Messaging;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using AspNetNetwork.RabbitMq.Messaging;
-using AspNetNetwork.RabbitMq.Messaging.Settings;
 
-namespace AspNetNetwork.RabbitMq;
+namespace DotNetIdentity.RabbitMq;
 
 public static class DependencyInjection
 {

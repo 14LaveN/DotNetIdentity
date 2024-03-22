@@ -1,6 +1,6 @@
 using FluentValidation;
 
-namespace AspNetNetwork.Micro.IdentityAPI.Mediatr.Commands.Login;
+namespace DotNetIdentity.Api.Mediatr.Commands.Login;
 
 /// <summary>
 /// Represents the login command validator class.

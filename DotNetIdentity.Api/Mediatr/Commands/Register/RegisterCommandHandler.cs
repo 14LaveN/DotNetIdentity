@@ -1,16 +1,16 @@
 using System.Security.Authentication;
-using AspNetNetwork.Application.ApiHelpers.Responses;
-using AspNetNetwork.Application.Core.Abstractions.Messaging;
-using AspNetNetwork.Domain.Common.Core.Exceptions;
-using AspNetNetwork.Domain.Common.Core.Primitives.Result;
-using AspNetNetwork.Domain.Common.Enumerations;
-using AspNetNetwork.Domain.Common.ValueObjects;
-using AspNetNetwork.Domain.Identity.Entities;
-using AspNetNetwork.Micro.IdentityAPI.Mediatr.Commands.Login;
+using DotNetIdentity.Application.ApiHelpers.Responses;
+using DotNetIdentity.Application.Core.Abstractions.Messaging;
+using DotNetIdentity.Api.Mediatr.Commands.Login;
+using DotNetIdentity.Domain.Core.Exceptions;
+using DotNetIdentity.Domain.Core.Primitives.Result;
+using DotNetIdentity.Domain.Entities;
+using DotNetIdentity.Domain.Enumerations;
+using DotNetIdentity.Domain.ValueObjects;
 using MediatR;
 using Microsoft.AspNetCore.Identity;
 
-namespace AspNetNetwork.Micro.IdentityAPI.Mediatr.Commands.Register;
+namespace DotNetIdentity.Api.Mediatr.Commands.Register;
 
 /// <summary>
 /// Represents the register command handler class.
@@ -19,7 +19,8 @@ namespace AspNetNetwork.Micro.IdentityAPI.Mediatr.Commands.Register;
 /// <param name="userManager">The user manager.</param>
 /// <param name="sender">The sender.</param>
 /// <param name="signInManager">The sign in manager.</param>
-public sealed class RegisterCommandHandler(ILogger<RegisterCommandHandler> logger,
+public sealed class RegisterCommandHandler(
+        ILogger<RegisterCommandHandler> logger,
         UserManager<User> userManager,
         ISender sender,
         SignInManager<User> signInManager)

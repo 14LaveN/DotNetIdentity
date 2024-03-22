@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace AspNetNetwork.RabbitMq.Messaging.Settings;
+namespace DotNetIdentity.RabbitMq.Messaging.Settings;
 
 /// <summary>
 /// Represents the message broker settings.

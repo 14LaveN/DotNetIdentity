@@ -1,6 +1,6 @@
-﻿using AspNetNetwork.Application.Core.Abstractions.Messaging;
+﻿using DotNetIdentity.Application.Core.Abstractions.Messaging;
 
-namespace AspNetNetwork.RabbitMq.Messaging;
+namespace DotNetIdentity.RabbitMq.Messaging;
 
 /// <summary>
 /// Represents the integration event publisher interface.

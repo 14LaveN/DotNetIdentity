@@ -1,4 +1,4 @@
-namespace AspNetNetwork.Application.Core.Settings.User;
+namespace DotNetIdentity.Application.Core.Settings.User;
 
 /// <summary>
 /// Represents jwt options class.

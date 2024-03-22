@@ -13,4 +13,30 @@
       </Content>
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="Common\DependencyInjection\" />
+      <Folder Include="Controllers\" />
+      <Folder Include="Logs\" />
+      <Folder Include="Mediatr\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\DotNetIdentity.Application\DotNetIdentity.Application.csproj" />
+      <ProjectReference Include="..\DotNetIdentity.BackgroundTasks\DotNetIdentity.BackgroundTasks.csproj" />
+      <ProjectReference Include="..\DotNetIdentity.Email\DotNetIdentity.Email.csproj" />
+      <ProjectReference Include="..\DotNetIdentity.RabbitMq\DotNetIdentity.RabbitMq.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="AspNetCore.HealthChecks.UI.Client" Version="8.0.0" />
+      <PackageReference Include="IdentityServer4" Version="4.1.2" />
+      <PackageReference Include="IdentityServer4.AspNetIdentity" Version="4.1.2" />
+      <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.3" />
+      <PackageReference Include="Microsoft.Extensions.Caching.StackExchangeRedis" Version="8.0.3" />
+      <PackageReference Include="Prometheus.Client.AspNetCore" Version="5.0.0" />
+      <PackageReference Include="Prometheus.Client.HttpRequestDurations" Version="3.6.0" />
+      <PackageReference Include="Serilog" Version="4.0.0-dev-02122" />
+      <PackageReference Include="Serilog.Settings.Configuration" Version="8.0.1-dev-00582" />
+    </ItemGroup>
+
 </Project>

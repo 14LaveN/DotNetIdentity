@@ -1,4 +1,4 @@
-namespace AspNetNetwork.Domain.Common.Enumerations;
+namespace DotNetIdentity.Domain.Enumerations;
 
 public enum StatusCode
 {

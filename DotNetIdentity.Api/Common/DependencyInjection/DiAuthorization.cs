@@ -1,15 +1,14 @@
 using System.Text;
 using System.Text.Json;
-using AspNetNetwork.Application.Core.Settings.User;
-using AspNetNetwork.Database.Common;
-using AspNetNetwork.Database.Identity;
-using AspNetNetwork.Domain.Identity.Entities;
+using DotNetIdentity.Application.Core.Settings.User;
+using DotNetIdentity.Database.Identity;
+using DotNetIdentity.Domain.Entities;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.IdentityModel.Tokens;
 
-namespace AspNetNetwork.Micro.IdentityAPI.Common.DependencyInjection;
+namespace DotNetIdentity.Api.Common.DependencyInjection;
 
 public static class DiAuthorization
 {
@@ -35,7 +34,7 @@ public static class DiAuthorization
             {
                 options.User.RequireUniqueEmail = false;
             })
-            .AddEntityFrameworkStores<BaseDbContext>()
+            .AddEntityFrameworkStores<UserDbContext>()
             .AddDefaultTokenProviders();
         
         services.AddAuthentication(opt => {
@@ -105,7 +104,7 @@ public static class DiAuthorization
         
         services.ConfigureApplicationCookie(config =>
         {
-            config.Cookie.Name = "AspNetNetwork.Micro.IdentityAPI.Cookie";
+            config.Cookie.Name = "DotNetIdentity.Api.Cookie";
             config.LoginPath = "/Auth/Login";
             config.LogoutPath = "/Auth/Logout";
         });

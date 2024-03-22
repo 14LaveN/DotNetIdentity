@@ -1,7 +1,7 @@
 ﻿using MediatR;
-using AspNetNetwork.Application.Core.Abstractions.Messaging;
+using DotNetIdentity.Application.Core.Abstractions.Messaging;
 
-namespace AspNetNetwork.BackgroundTasks.Abstractions.Messaging;
+namespace DotNetIdentity.BackgroundTasks.Abstractions.Messaging;
 
 /// <summary>
 /// Represents the integration event handler.

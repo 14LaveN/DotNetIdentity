@@ -1,8 +1,8 @@
-﻿using AspNetNetwork.Application.Core.Abstractions.Messaging;
+﻿using DotNetIdentity.Application.Core.Abstractions.Messaging;
+using DotNetIdentity.Database.Identity.Data.Interfaces;
 using MediatR;
-using AspNetNetwork.Database.Identity.Data.Interfaces;
 
-namespace AspNetNetwork.Application.Core.Behaviours;
+namespace DotNetIdentity.Application.Core.Behaviours;
 
 /// <summary>
 /// Represents the transaction behaviour middleware.

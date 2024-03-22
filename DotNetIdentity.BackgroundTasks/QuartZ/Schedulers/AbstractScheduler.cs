@@ -1,9 +1,9 @@
 using Microsoft.Extensions.DependencyInjection;
 using Quartz;
 using Quartz.Impl;
-using AspNetNetwork.BackgroundTasks.QuartZ.Jobs;
+using DotNetIdentity.BackgroundTasks.QuartZ.Jobs;
 
-namespace AspNetNetwork.BackgroundTasks.QuartZ.Schedulers;
+namespace DotNetIdentity.BackgroundTasks.QuartZ.Schedulers;
 
 /// <summary>
 /// Represents the abstract scheduler class.

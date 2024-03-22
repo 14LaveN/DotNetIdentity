@@ -1,17 +1,17 @@
 using System.Reflection;
+using DotNetIdentity.Domain.Core.Abstractions;
+using DotNetIdentity.Domain.Core.Events;
+using DotNetIdentity.Domain.Core.Primitives;
+using DotNetIdentity.Domain.Core.Primitives.Maybe;
+using DotNetIdentity.Domain.Entities;
 using MediatR;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
-using TeamTasks.Domain.Core.Abstractions;
-using TeamTasks.Domain.Core.Events;
-using TeamTasks.Domain.Core.Primitives;
-using TeamTasks.Domain.Core.Primitives.Maybe;
-using TeamTasks.Domain.Entities;
 
-namespace TeamTasks.Database.Identity;
+namespace DotNetIdentity.Database.Identity;
 
 /// <summary>
 /// Represents the application database context identity class.
@@ -49,7 +49,6 @@ public class UserDbContext
         modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
         
         modelBuilder.HasDefaultSchema("dbo");
-        
         
         modelBuilder.Entity<IdentityUserLogin<long>>()
             .HasKey(l => new { l.LoginProvider, l.ProviderKey });
@@ -104,7 +103,7 @@ public class UserDbContext
         }
 
         /// <summary>
-        /// Updates the entities implementing <see cref="IAuditableEntity"/> interface.
+        /// Updates the entities implementing <see cref="utcNow"/> interface.
         /// </summary>
         /// <param name="utcNow">The current date and time in UTC format.</param>
         private void UpdateAuditableEntities(DateTime utcNow)

@@ -1,9 +1,8 @@
-using AspNetNetwork.Domain.Common.Core.Primitives.Maybe;
-using AspNetNetwork.Domain.Common.ValueObjects;
-using AspNetNetwork.Domain.Entities;
-using AspNetNetwork.Domain.Identity.Entities;
+using DotNetIdentity.Domain.Core.Primitives.Maybe;
+using DotNetIdentity.Domain.Entities;
+using DotNetIdentity.Domain.ValueObjects;
 
-namespace AspNetNetwork.Database.Identity.Data.Interfaces;
+namespace DotNetIdentity.Database.Identity.Data.Interfaces;
 
 /// <summary>
 /// Represents the user repository interface.

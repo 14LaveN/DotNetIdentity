@@ -1,6 +1,6 @@
 using FluentValidation;
 
-namespace AspNetNetwork.Micro.IdentityAPI.Mediatr.Commands.Register;
+namespace DotNetIdentity.Api.Mediatr.Commands.Register;
 
 /// <summary>
 /// Represents the register command validator class.

@@ -2,7 +2,7 @@ using IdentityModel;
 using IdentityServer4;
 using IdentityServer4.Models;
 
-namespace AspNetNetwork.Application.Core.Settings.User;
+namespace DotNetIdentity.Application.Core.Settings.User;
 
 /// <summary>
 /// Represents the identity configuration class.

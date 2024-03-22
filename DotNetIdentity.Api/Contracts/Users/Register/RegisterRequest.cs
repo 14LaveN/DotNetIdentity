@@ -1,7 +1,6 @@
-using AspNetNetwork.Domain.Common.ValueObjects;
-using AspNetNetwork.Micro.IdentityAPI.Mediatr.Commands.Register;
+using DotNetIdentity.Api.Mediatr.Commands.Register;
 
-namespace AspNetNetwork.Micro.IdentityAPI.Contracts.Users.Register;
+namespace DotNetIdentity.Api.Contracts.Users.Register;
 
 /// <summary>
 /// Represents the register request record class.

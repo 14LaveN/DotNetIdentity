@@ -1,6 +1,7 @@
-﻿using AspNetNetwork.Domain.Common.Core.Events;
+﻿using DotNetIdentity.Domain.Common.Core.Primitives;
+using DotNetIdentity.Domain.Core.Events;
 
-namespace AspNetNetwork.Domain.Common.Core.Primitives;
+namespace DotNetIdentity.Domain.Core.Primitives;
 
 /// <summary>
 /// Represents the aggregate root.

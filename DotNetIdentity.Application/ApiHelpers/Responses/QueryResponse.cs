@@ -1,6 +1,6 @@
-using AspNetNetwork.Domain.Common.Enumerations;
+using DotNetIdentity.Domain.Enumerations;
 
-namespace AspNetNetwork.Application.ApiHelpers.Responses;
+namespace DotNetIdentity.Application.ApiHelpers.Responses;
 
 /// <summary>
 /// Represents the response from query class.

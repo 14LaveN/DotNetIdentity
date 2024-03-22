@@ -1,4 +1,4 @@
-﻿namespace AspNetNetwork.Email.Emails.Settings;
+﻿namespace DotNetIdentity.Email.Emails.Settings;
 
 /// <summary>
 /// Represents the mail settings.

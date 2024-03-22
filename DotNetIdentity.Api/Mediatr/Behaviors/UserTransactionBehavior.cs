@@ -1,9 +1,8 @@
-using AspNetNetwork.Application.Core.Abstractions.Messaging;
-using AspNetNetwork.Database.Common.Abstractions;
-using AspNetNetwork.Domain.Identity.Entities;
+using DotNetIdentity.Application.Core.Abstractions.Messaging;
+using DotNetIdentity.Database.Identity.Data.Interfaces;
 using MediatR;
 
-namespace AspNetNetwork.Micro.IdentityAPI.Mediatr.Behaviors;
+namespace DotNetIdentity.Api.Mediatr.Behaviors;
 
 /// <summary>
 /// Represents the <see cref="User"/> transaction behaviour class.
@@ -13,13 +12,13 @@ internal sealed class UserTransactionBehavior<TRequest, TResponse>
     where TRequest : class, IRequest<TResponse>
     where TResponse : class
 {
-    private readonly IUnitOfWork<User> _unitOfWork;
+    private readonly IUserUnitOfWork _unitOfWork;
 
     /// <summary>
     /// Initializes a new instance of the <see cref="UserTransactionBehavior{TRequest,TResponse}"/> class.
     /// </summary>
-    /// <param name="unitOfWork">The unit of work.</param>
-    public UserTransactionBehavior(IUnitOfWork<User> unitOfWork) =>
+    /// <param name="unitOfWork">The user unit of work.</param>
+    public UserTransactionBehavior(IUserUnitOfWork unitOfWork) =>
         _unitOfWork = unitOfWork;
 
     /// <inheritdoc/>

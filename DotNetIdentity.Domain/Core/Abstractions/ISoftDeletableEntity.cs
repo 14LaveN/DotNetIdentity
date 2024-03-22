@@ -1,4 +1,4 @@
-﻿namespace AspNetNetwork.Domain.Common.Core.Abstractions;
+﻿namespace DotNetIdentity.Domain.Core.Abstractions;
 
 /// <summary>
 /// Represents the marker interface for soft-deletable entities.

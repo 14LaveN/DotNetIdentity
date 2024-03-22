@@ -1,6 +1,6 @@
-﻿using AspNetNetwork.Email.Contracts.Emails;
+﻿using DotNetIdentity.Email.Contracts.Emails;
 
-namespace AspNetNetwork.Email.Emails;
+namespace DotNetIdentity.Email.Emails;
 
 /// <summary>
 /// Represents the email service interface.

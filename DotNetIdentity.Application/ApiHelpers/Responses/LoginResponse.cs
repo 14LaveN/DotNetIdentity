@@ -1,7 +1,6 @@
-using AspNetNetwork.Domain.Common.Core.Primitives.Result;
-using AspNetNetwork.Domain.Common.Enumerations;
+using DotNetIdentity.Domain.Enumerations;
 
-namespace AspNetNetwork.Application.ApiHelpers.Responses;
+namespace DotNetIdentity.Application.ApiHelpers.Responses;
 
 /// <summary>
 /// Gets or sets login response class.

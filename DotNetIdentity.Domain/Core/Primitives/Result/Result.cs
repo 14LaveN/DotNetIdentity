@@ -1,4 +1,4 @@
-﻿namespace AspNetNetwork.Domain.Common.Core.Primitives.Result;
+﻿namespace DotNetIdentity.Domain.Core.Primitives.Result;
 
 /// <summary>
 /// Represents a result of some operation, with status information and possibly an error.
@@ -69,7 +69,7 @@ public class Result
     /// </summary>
     /// <param name="error">The error.</param>
     /// <returns>A new instance of <see cref="Result"/> with the specified error and failure flag set.</returns>
-    public static Result Failure(Error error) => new Result(false, error);
+    public static Task<Result> Failure(Error error) => new Result(false, error);
 
     /// <summary>
     /// Returns a failure <see cref="Result{TValue}"/> with the specified error.

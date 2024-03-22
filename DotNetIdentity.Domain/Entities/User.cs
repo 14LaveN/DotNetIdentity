@@ -1,18 +1,16 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
-using AspNetNetwork.Domain.Common.Core.Abstractions;
-using AspNetNetwork.Domain.Common.Core.Errors;
-using AspNetNetwork.Domain.Common.Core.Events;
-using AspNetNetwork.Domain.Common.Core.Primitives;
-using AspNetNetwork.Domain.Common.Core.Primitives.Result;
-using AspNetNetwork.Domain.Common.Entities;
-using AspNetNetwork.Domain.Common.ValueObjects;
-using AspNetNetwork.Domain.Core.Utility;
-using AspNetNetwork.Domain.Identity.Enumerations;
-using AspNetNetwork.Domain.Identity.Events.PersonalEvent;
-using AspNetNetwork.Domain.Identity.Events.User;
+using DotNetIdentity.Domain.Common.Core.Primitives;
+using DotNetIdentity.Domain.Core.Abstractions;
+using DotNetIdentity.Domain.Core.Errors;
+using DotNetIdentity.Domain.Core.Utility;
+using DotNetIdentity.Domain.Core.Events;
+using DotNetIdentity.Domain.Core.Primitives;
+using DotNetIdentity.Domain.Core.Primitives.Result;
+using DotNetIdentity.Domain.Events.User;
+using DotNetIdentity.Domain.ValueObjects;
 using Microsoft.AspNetCore.Identity;
 
-namespace AspNetNetwork.Domain.Identity.Entities;
+namespace DotNetIdentity.Domain.Entities;
 
 /// <summary>
 /// Represents the user entity.
@@ -52,16 +50,6 @@ public sealed class User : IdentityUser<Guid>, IAuditableEntity, ISoftDeletableE
     public override Guid Id { get; set; }
     
     /// <summary>
-    /// Gets or sets author messages.
-    /// </summary>
-    public ICollection<Message>? AuthorMessages { get; set; }
-
-    /// <summary>
-    /// Gets or sets recipient messages.
-    /// </summary>
-    public ICollection<Message>? RecipientMessages { get; set; }
-    
-    /// <summary>
     /// Gets the user first name.
     /// </summary>
     public override string? UserName { get; set; }
@@ -76,26 +64,6 @@ public sealed class User : IdentityUser<Guid>, IAuditableEntity, ISoftDeletableE
     /// </summary>
     public LastName LastName { get; private set; }
     
-    /// <summary>
-    /// Navigation field.
-    /// </summary>
-    public ICollection<Attendee>? Attendees { get; set; }
-    
-    /// <summary>
-    /// Navigation field.
-    /// </summary>
-    public ICollection<GroupEvent> YourGroupEvents { get; set; }
-    
-    /// <summary>
-    /// Navigation field.
-    /// </summary>
-    public ICollection<GroupEvent> AttendeeGroupEvents { get; set; }
-    
-    /// <summary>
-    /// Navigation field.
-    /// </summary>
-    public ICollection<PersonalEvent> PersonalEvents { get; set; }
-
     /// <summary>
     /// Gets the user full name.
     /// </summary>
@@ -166,25 +134,6 @@ public sealed class User : IdentityUser<Guid>, IAuditableEntity, ISoftDeletableE
         user.AddDomainEvent(new UserCreatedDomainEvent(user));
 
         return user;
-    }
-
-    /// <summary>
-    /// Creates a new personal event.
-    /// </summary>
-    /// <param name="name">The event name.</param>
-    /// <param name="category">The event category.</param>
-    /// <param name="dateTimeUtc">The date and time of the event.</param>
-    /// <returns>The newly created personal event.</returns>
-    public PersonalEvent CreatePersonalEvent(
-        Name name,
-        Category category,
-        DateTime dateTimeUtc)
-    {
-        var personalEvent = new PersonalEvent(this, name, category, dateTimeUtc);
-
-        AddDomainEvent(new PersonalEventCreatedDomainEvent(personalEvent));
-
-        return personalEvent;
     }
 
     /// <summary>

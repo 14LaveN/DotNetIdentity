@@ -1,6 +1,7 @@
-﻿using AspNetNetwork.Domain.Common.Core.Primitives;
+﻿using DotNetIdentity.Domain.Common.Core.Primitives;
+using DotNetIdentity.Domain.Core.Primitives;
 
-namespace AspNetNetwork.Application.ApiHelpers.Contracts;
+namespace DotNetIdentity.Application.ApiHelpers.Contracts;
 
 /// <summary>
 /// Represents API an error response.

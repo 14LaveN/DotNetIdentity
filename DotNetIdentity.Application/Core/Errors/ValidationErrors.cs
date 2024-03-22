@@ -1,6 +1,6 @@
-﻿using AspNetNetwork.Domain.Common.Core.Primitives;
+﻿using DotNetIdentity.Domain.Core.Primitives;
 
-namespace AspNetNetwork.Application.Core.Errors;
+namespace DotNetIdentity.Application.Core.Errors;
 
 /// <summary>
 /// Contains the validation errors.
@@ -161,6 +161,16 @@ public static class ValidationErrors
         public static Error UserIdIsRequired => new Error("ChangePassword.UserIdIsRequired", "The user identifier is required.");
 
         public static Error PasswordIsRequired => new Error("ChangePassword.PasswordIsRequired", "The password is required.");
+    }
+    
+    /// <summary>
+    /// Contains the change name errors.
+    /// </summary>
+    public static class ChangeName
+    {
+        public static Error UserIdIsRequired => new Error("ChangeName.UserIdIsRequired", "The user identifier is required.");
+
+        public static Error NameIsRequired => new Error("ChangeName.NameIsRequired", "The name is required.");
     }
 
     /// <summary>

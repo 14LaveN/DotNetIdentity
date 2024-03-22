@@ -1,8 +1,9 @@
-﻿using AspNetNetwork.Domain.Common.Core.Errors;
-using AspNetNetwork.Domain.Common.Core.Primitives;
-using AspNetNetwork.Domain.Common.Core.Primitives.Result;
+﻿using DotNetIdentity.Domain.Common.Core.Primitives;
+using DotNetIdentity.Domain.Core.Errors;
+using DotNetIdentity.Domain.Core.Primitives;
+using DotNetIdentity.Domain.Core.Primitives.Result;
 
-namespace AspNetNetwork.Domain.Common.ValueObjects;
+namespace DotNetIdentity.Domain.ValueObjects;
 
 /// <summary>
 /// Represents the last name value object.

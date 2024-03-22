@@ -1,10 +1,8 @@
-﻿
+﻿using DotNetIdentity.RabbitMq.Messaging;
+using DotNetIdentity.Domain.Core.Events;
+using DotNetIdentity.Domain.Events.User;
 
-
-using AspNetNetwork.Domain.Common.Core.Events;
-using AspNetNetwork.Domain.Identity.Events.User;
-
-namespace AspNetNetwork.RabbitMq.Messaging.User.Events.PasswordChanged;
+namespace DotNetIdentity.RabbitMq.Messaging.User.Events.PasswordChanged;
 
 /// <summary>
 /// Represents the <see cref="UserPasswordChangedDomainEvent"/> handler.

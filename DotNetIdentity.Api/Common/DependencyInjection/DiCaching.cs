@@ -1,4 +1,4 @@
-namespace AspNetNetwork.Micro.IdentityAPI.Common.DependencyInjection;
+namespace DotNetIdentity.Api.Common.DependencyInjection;
 
 public static class DiCaching
 {

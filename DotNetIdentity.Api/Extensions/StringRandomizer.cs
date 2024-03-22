@@ -1,4 +1,4 @@
-namespace AspNetNetwork.Micro.IdentityAPI.Extensions;
+namespace DotNetIdentity.Api.Extensions;
 
 /// <summary>
 /// Represents the string randomizer class.

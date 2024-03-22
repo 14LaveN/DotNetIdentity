@@ -1,10 +1,10 @@
 using System.Diagnostics;
 using System.Globalization;
+using DotNetIdentity.Cache.Service;
 using Microsoft.Extensions.Caching.Distributed;
 using Prometheus;
-using AspNetNetwork.Cache.Service;
 
-namespace AspNetNetwork.Application.Core.Helpers.Metric;
+namespace DotNetIdentity.Application.Core.Helpers.Metric;
 
 /// <summary>
 /// Represents the create metrics helper.
@@ -12,7 +12,7 @@ namespace AspNetNetwork.Application.Core.Helpers.Metric;
 public sealed class CreateMetricsHelper
 {
     private static readonly Counter RequestCounter =
-        Metrics.CreateCounter("AspNetNetwork_requests_total", "Total number of requests.");
+        Metrics.CreateCounter("DotNetIdentity_requests_total", "Total number of requests.");
     
     private readonly IDistributedCache _distributedCache;
 
@@ -31,7 +31,7 @@ public sealed class CreateMetricsHelper
     {
         RequestCounter.Inc();
 
-        Metrics.CreateHistogram("AspNetNetwork_request_duration_seconds", "Request duration in seconds.")
+        Metrics.CreateHistogram("DotNetIdentity_request_duration_seconds", "Request duration in seconds.")
             .Observe(stopwatch.Elapsed.TotalMilliseconds);
         
         await _distributedCache.SetRecordAsync(

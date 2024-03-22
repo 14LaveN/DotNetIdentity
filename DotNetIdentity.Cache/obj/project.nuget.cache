@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "J0Yszm857Tqi9LkvrFM9bjnioT8CE0PE+fAkNOYbvSivJWfS8/CIx+8lAn4APLj7AfFtgpXCxmrNbkN+aYdbiA==",
+  "dgSpecHash": "xg5+33F4M2E+rK7ii5THz7EjNToWS+qKiIYruAWMYGQjuM4jBvA4eDdj8UTzddXnLNfRea8woBNkMGXTrNpl0A==",
   "success": true,
   "projectFilePath": "G:\\DotNetProjects\\DotNetIdentity\\DotNetIdentity.Cache\\DotNetIdentity.Cache.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\ponom\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\8.0.0\\microsoft.extensions.caching.abstractions.8.0.0.nupkg.sha512",
+    "C:\\Users\\ponom\\.nuget\\packages\\microsoft.extensions.primitives\\8.0.0\\microsoft.extensions.primitives.8.0.0.nupkg.sha512"
+  ],
   "logs": []
 }

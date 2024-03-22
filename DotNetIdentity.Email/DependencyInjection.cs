@@ -1,11 +1,11 @@
-using AspNetNetwork.Application.Core.Abstractions.Notifications;
+using DotNetIdentity.Application.Core.Abstractions.Notifications;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
-using AspNetNetwork.Email.Emails;
-using AspNetNetwork.Email.Emails.Settings;
+using DotNetIdentity.Email.Emails;
+using DotNetIdentity.Email.Emails.Settings;
 
-namespace AspNetNetwork.Email;
+namespace DotNetIdentity.Email;
 
 public static class DependencyInjection
 {

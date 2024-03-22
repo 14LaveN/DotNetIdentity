@@ -1,14 +1,14 @@
-﻿using AspNetNetwork.Application.Core.Abstractions.Notifications;
-using AspNetNetwork.BackgroundTasks.Abstractions.Messaging;
-using AspNetNetwork.Database.Identity.Data.Interfaces;
-using AspNetNetwork.Domain.Common.Core.Errors;
-using AspNetNetwork.Domain.Common.Core.Exceptions;
-using AspNetNetwork.Domain.Common.Core.Primitives.Maybe;
-using AspNetNetwork.Domain.Identity.Entities;
-using AspNetNetwork.Email.Contracts.Emails;
-using AspNetNetwork.RabbitMq.Messaging.User.Events.UserCreated;
+﻿using DotNetIdentity.Application.Core.Abstractions.Notifications;
+using DotNetIdentity.BackgroundTasks.Abstractions.Messaging;
+using DotNetIdentity.Database.Identity.Data.Interfaces;
+using DotNetIdentity.Domain.Core.Errors;
+using DotNetIdentity.Domain.Core.Exceptions;
+using DotNetIdentity.Domain.Core.Primitives.Maybe;
+using DotNetIdentity.Domain.Entities;
+using DotNetIdentity.Email.Contracts.Emails;
+using DotNetIdentity.RabbitMq.Messaging.User.Events.UserCreated;
 
-namespace AspNetNetwork.BackgroundTasks.IntegrationEvents.Users.UserCreated;
+namespace DotNetIdentity.BackgroundTasks.IntegrationEvents.Users.UserCreated;
 
 /// <summary>
 /// Represents the <see cref="UserCreatedIntegrationEvent"/> handler.

@@ -1,6 +1,6 @@
-﻿using AspNetNetwork.Domain.Common.Core.Events;
+﻿using DotNetIdentity.Domain.Core.Events;
 
-namespace AspNetNetwork.Domain.Identity.Events.User;
+namespace DotNetIdentity.Domain.Events.User;
 
 /// <summary>
 /// Represents the event that is raised when a users first and last name is changed.
@@ -11,10 +11,10 @@ public sealed class UserNameChangedDomainEvent : IDomainEvent
     /// Initializes a new instance of the <see cref="UserNameChangedDomainEvent"/> class. 
     /// </summary>
     /// <param name="user">The user.</param>
-    internal UserNameChangedDomainEvent(Entities.User user) => User = user;
+    internal UserNameChangedDomainEvent(DotNetIdentity.Domain.Entities.User user) => User = user;
 
     /// <summary>
     /// Gets the user.
     /// </summary>
-    public Entities.User User { get; }
+    public DotNetIdentity.Domain.Entities.User User { get; }
 }

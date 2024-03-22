@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\DotNetIdentity.Application\DotNetIdentity.Application.csproj" />
+      <ProjectReference Include="..\DotNetIdentity.Domain\DotNetIdentity.Domain.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Reference Include="RabbitMQ.Client">
+        <HintPath>C:\Users\ponom\.nuget\packages\rabbitmq.client\7.0.0-alpha.4\lib\net6.0\RabbitMQ.Client.dll</HintPath>
+      </Reference>
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="AspNetCore.HealthChecks.Rabbitmq" Version="8.0.0" />
+      <PackageReference Include="RabbitMQ.Client" Version="7.0.0-alpha.4" />
+    </ItemGroup>
+
+</Project>

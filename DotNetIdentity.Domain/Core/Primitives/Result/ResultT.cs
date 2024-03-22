@@ -1,10 +1,10 @@
-﻿namespace AspNetNetwork.Domain.Common.Core.Primitives.Result;
+﻿namespace DotNetIdentity.Domain.Core.Primitives.Result;
 
 /// <summary>
 /// Represents the result of some operation, with status information and possibly a value and an error.
 /// </summary>
 /// <typeparam name="TValue">The result value type.</typeparam>
-public class Result<TValue> : Common.Core.Primitives.Result.Result
+public class Result<TValue> : Domain.Core.Primitives.Result.Result
 {
     private readonly TValue _value;
 

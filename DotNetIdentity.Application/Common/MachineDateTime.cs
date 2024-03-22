@@ -1,6 +1,6 @@
-﻿using AspNetNetwork.Application.Core.Abstractions.Common;
+﻿using DotNetIdentity.Application.Core.Abstractions.Common;
 
-namespace AspNetNetwork.Application.Common;
+namespace DotNetIdentity.Application.Common;
 
 /// <summary>
 /// Represents the machine date time service.

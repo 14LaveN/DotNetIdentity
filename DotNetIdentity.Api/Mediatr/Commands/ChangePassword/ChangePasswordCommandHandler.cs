@@ -1,13 +1,13 @@
-﻿using AspNetNetwork.Application.Core.Abstractions.Messaging;
-using AspNetNetwork.Database.Identity.Data.Interfaces;
-using AspNetNetwork.Domain.Common.Core.Errors;
-using AspNetNetwork.Domain.Common.Core.Primitives.Maybe;
-using AspNetNetwork.Domain.Common.Core.Primitives.Result;
-using AspNetNetwork.Domain.Common.ValueObjects;
-using AspNetNetwork.Domain.Identity.Entities;
+﻿using DotNetIdentity.Application.Core.Abstractions.Messaging;
+using DotNetIdentity.Database.Identity.Data.Interfaces;
+using DotNetIdentity.Domain.Core.Errors;
+using DotNetIdentity.Domain.Core.Primitives.Maybe;
+using DotNetIdentity.Domain.Core.Primitives.Result;
+using DotNetIdentity.Domain.Entities;
+using DotNetIdentity.Domain.ValueObjects;
 using Microsoft.AspNetCore.Identity;
 
-namespace AspNetNetwork.Micro.IdentityAPI.Mediatr.Commands.ChangePassword;
+namespace DotNetIdentity.Api.Mediatr.Commands.ChangePassword;
 
 /// <summary>
 /// Represents the <see cref="ChangePasswordCommand"/> handler.
@@ -37,7 +37,7 @@ internal sealed class ChangePasswordCommandHandler : ICommandHandler<ChangePassw
 
         if (passwordResult.IsFailure)
         {
-            return Result.Failure(passwordResult.Error);
+            return await Result.Failure(passwordResult.Error);
         }
 
         Maybe<User> maybeUser = await _userManager.FindByIdAsync(request.UserId.ToString()) 
@@ -45,7 +45,7 @@ internal sealed class ChangePasswordCommandHandler : ICommandHandler<ChangePassw
 
         if (maybeUser.HasNoValue)
         {
-            return Result.Failure(DomainErrors.User.NotFound);
+            return await Result.Failure(DomainErrors.User.NotFound);
         }
 
         User user = maybeUser.Value;
@@ -56,7 +56,7 @@ internal sealed class ChangePasswordCommandHandler : ICommandHandler<ChangePassw
 
         if (result.IsFailure)
         {
-            return Result.Failure(result.Error);
+            return await Result.Failure(result.Error);
         }
 
         await _unitOfWork.SaveChangesAsync(cancellationToken);

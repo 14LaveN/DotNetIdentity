@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.OpenApi.Models;
 
-namespace AspNetNetwork.Application.ApiHelpers.Configurations;
+namespace DotNetIdentity.Application.ApiHelpers.Configurations;
 
 public static class SwaggerConfiguration
 {
@@ -23,7 +23,7 @@ public static class SwaggerConfiguration
             {
                 Version = "Поколение 1",
                 Title = apiName,
-                Description = $"Backend Web API на C# .NET for TeamTasks.Micro.{apiName} application",
+                Description = $"Backend Web API на C# .NET for {apiName} application",
                 Contact = new OpenApiContact
                 {
                     Name = "GitHub",

@@ -1,9 +1,8 @@
 ﻿using System.Text.Json.Serialization;
-using AspNetNetwork.Application.Core.Abstractions.Messaging;
+using DotNetIdentity.Application.Core.Abstractions.Messaging;
+using DotNetIdentity.Domain.Events.User;
 
-using AspNetNetwork.Domain.Identity.Events.User;
-
-namespace AspNetNetwork.RabbitMq.Messaging.User.Events.UserCreated;
+namespace DotNetIdentity.RabbitMq.Messaging.User.Events.UserCreated;
 
 /// <summary>
 /// Represents the integration event that is raised when a user is created.

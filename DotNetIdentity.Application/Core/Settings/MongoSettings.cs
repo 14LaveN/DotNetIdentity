@@ -1,4 +1,4 @@
-namespace AspNetNetwork.Application.Core.Settings;
+namespace DotNetIdentity.Application.Core.Settings;
 
 /// <summary>
 /// Represents the mongo settings class.

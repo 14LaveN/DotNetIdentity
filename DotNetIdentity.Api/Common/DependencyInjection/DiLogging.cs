@@ -1,6 +1,6 @@
 using Serilog;
 
-namespace AspNetNetwork.Micro.IdentityAPI.Common.DependencyInjection;
+namespace DotNetIdentity.Api.Common.DependencyInjection;
 
 public static class DiLogging
 {
@@ -11,7 +11,7 @@ public static class DiLogging
     /// <param name="configuration">The configuration.</param>
     /// <returns>The same service collection.</returns>
     public static IServiceCollection AddLoggingExtension(
-        IServiceCollection services,
+        this IServiceCollection services,
         IConfiguration configuration)
     {
         if (services is null)

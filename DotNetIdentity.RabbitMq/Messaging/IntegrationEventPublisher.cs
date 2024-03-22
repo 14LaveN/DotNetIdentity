@@ -1,10 +1,10 @@
 ﻿using System.Text;
 using System.Text.Json;
-using AspNetNetwork.Application.Core.Abstractions.Messaging;
-using AspNetNetwork.RabbitMq.Messaging.Settings;
+using DotNetIdentity.Application.Core.Abstractions.Messaging;
+using DotNetIdentity.RabbitMq.Messaging.Settings;
 using RabbitMQ.Client;
 
-namespace AspNetNetwork.RabbitMq.Messaging;
+namespace DotNetIdentity.RabbitMq.Messaging;
 
 /// <summary>
 /// Represents the integration event publisher.

@@ -3,9 +3,9 @@ using System.Text.Json;
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
-using ErrorResponse = AspNetNetwork.Application.ApiHelpers.Responses.ErrorResponse;
+using ErrorResponse = DotNetIdentity.Application.ApiHelpers.Responses.ErrorResponse;
 
-namespace AspNetNetwork.Application.ApiHelpers.ExceptionHandler;
+namespace DotNetIdentity.Application.ApiHelpers.ExceptionHandler;
 
 /// <summary>
 /// Represents the global exception handler class.

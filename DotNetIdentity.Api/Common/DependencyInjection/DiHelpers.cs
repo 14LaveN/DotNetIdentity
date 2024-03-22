@@ -1,6 +1,6 @@
-using AspNetNetwork.Application.Core.Helpers.Metric;
+using DotNetIdentity.Application.Core.Helpers.Metric;
 
-namespace AspNetNetwork.Micro.IdentityAPI.Common.DependencyInjection;
+namespace DotNetIdentity.Api.Common.DependencyInjection;
 
 public static class DiHelpers
 {

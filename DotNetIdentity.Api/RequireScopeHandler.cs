@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Authorization;
 
-namespace AspNetNetwork.Micro.IdentityAPI;
+namespace DotNetIdentity.Api;
 
 /// <summary>
 /// Represents the require scope authorization handler.

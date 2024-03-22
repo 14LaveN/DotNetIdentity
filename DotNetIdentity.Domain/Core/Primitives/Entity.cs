@@ -1,6 +1,6 @@
-﻿using AspNetNetwork.Domain.Core.Utility;
+﻿using DotNetIdentity.Domain.Core.Utility;
 
-namespace AspNetNetwork.Domain.Common.Core.Primitives;
+namespace DotNetIdentity.Domain.Core.Primitives;
 
 /// <summary>
 /// Represents the base class that all entities derive from.

@@ -1,16 +1,15 @@
 ﻿using System.Reflection;
 using Microsoft.Extensions.Configuration;
-using AspNetNetwork.BackgroundTasks.QuartZ;
-using AspNetNetwork.BackgroundTasks.QuartZ.Jobs;
-using AspNetNetwork.BackgroundTasks.QuartZ.Schedulers;
-using AspNetNetwork.BackgroundTasks.Services;
-using AspNetNetwork.BackgroundTasks.Settings;
-using AspNetNetwork.BackgroundTasks.Tasks;
+using DotNetIdentity.BackgroundTasks.QuartZ;
+using DotNetIdentity.BackgroundTasks.QuartZ.Jobs;
+using DotNetIdentity.BackgroundTasks.QuartZ.Schedulers;
+using DotNetIdentity.BackgroundTasks.Services;
 using Microsoft.Extensions.DependencyInjection;
+using Quartz;
 using Quartz.Impl;
 using Quartz.Spi;
 
-namespace AspNetNetwork.BackgroundTasks;
+namespace DotNetIdentity.BackgroundTasks;
 
 public static class BDependencyInjection
 {
@@ -26,24 +25,24 @@ public static class BDependencyInjection
     {
         services.AddMediatR(x=>
             x.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly()));
-
-        services.Configure<BackgroundTaskSettings>(configuration.GetSection(BackgroundTaskSettings.SettingsKey));
-
-        //TODO services.AddHostedService<GroupEventNotificationsProducerBackgroundService>();
-//TODO 
-        //TODO services.AddHostedService<PersonalEventNotificationsProducerBackgroundService>();
-//TODO 
-        //TODO services.AddHostedService<EmailNotificationConsumerBackgroundService>();
-//TODO 
-        //TODO services.AddHostedService<IntegrationEventConsumerBackgroundService>();
-
-
-        services.AddScoped<IPersonalEventNotificationsProducer, PersonalEventNotificationsProducer>();
-
-        services.AddScoped<IEmailNotificationsConsumer, EmailNotificationsConsumer>();
-
+        
         services.AddScoped<IIntegrationEventConsumer, IntegrationEventConsumer>();
 
+        services.AddQuartz(configure =>
+        {
+            var jobKey = new JobKey(nameof(UserDbJob));
+
+            configure
+                .AddJob<UserDbJob>(jobKey);
+            
+            configure.UseMicrosoftDependencyInjectionJobFactory();
+        });
+
+        services.AddQuartzHostedService(options =>
+        {
+            options.WaitForJobsToComplete = true;
+        });
+        
         services.AddTransient<IJobFactory, QuartzJobFactory>();
         services.AddSingleton(_ =>
         {
@@ -53,10 +52,8 @@ public static class BDependencyInjection
             return scheduler;
         });
         services.AddTransient<UserDbScheduler>();
-        services.AddTransient<MessageDbScheduler>();
-        services.AddTransient<SaveMetricsScheduler>();
         
-        var scheduler = new SaveMetricsScheduler();
+        var scheduler = new UserDbScheduler();
         scheduler.Start(services);
         
         return services;

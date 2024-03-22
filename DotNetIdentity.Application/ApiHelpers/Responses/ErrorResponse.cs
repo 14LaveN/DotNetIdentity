@@ -1,4 +1,4 @@
-namespace AspNetNetwork.Application.ApiHelpers.Responses;
+namespace DotNetIdentity.Application.ApiHelpers.Responses;
 
 /// <summary>
 /// Represents the error response class.

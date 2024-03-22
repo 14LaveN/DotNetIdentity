@@ -1,10 +1,10 @@
+using DotNetIdentity.Database.Identity.Data.Interfaces;
+using DotNetIdentity.Database.Identity.Data.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using AspNetNetwork.Database.Identity.Data.Interfaces;
-using AspNetNetwork.Database.Identity.Data.Repositories;
 
-namespace AspNetNetwork.Database.Identity;
+namespace DotNetIdentity.Database.Identity;
 
 public static class DependencyInjection
 {
@@ -21,6 +21,25 @@ public static class DependencyInjection
         {
             throw new ArgumentNullException(nameof(services));
         }
+        
+        var connectionString = configuration.GetConnectionString("DNIGenericDb");
+        
+        services.AddDbContext<UserDbContext>(o => 
+            o.UseNpgsql(connectionString, act 
+                    =>
+                {
+                    act.UseQuerySplittingBehavior(QuerySplittingBehavior.SplitQuery);
+                    act.EnableRetryOnFailure(3);
+                    act.CommandTimeout(30);
+                })
+                .LogTo(Console.WriteLine)
+                .EnableServiceProviderCaching()
+                .EnableSensitiveDataLogging()
+                .EnableDetailedErrors());
+        
+        if (connectionString is not null)
+            services.AddHealthChecks()
+                .AddNpgSql(connectionString);
         
         services.AddScoped<IUserUnitOfWork, UserUnitOfWork>();
         services.AddScoped<IUserRepository, UserRepository>();

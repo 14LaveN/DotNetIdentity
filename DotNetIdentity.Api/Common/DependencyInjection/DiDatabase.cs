@@ -1,13 +1,6 @@
-using AspNetNetwork.Application.Core.Settings;
-using AspNetNetwork.Database.Attendee;
-using AspNetNetwork.Database.GroupEvent;
-using AspNetNetwork.Database.Identity;
-using AspNetNetwork.Database.Invitation;
-using AspNetNetwork.Database.MetricsAndMessages;
-using AspNetNetwork.Database.Notification;
-using AspNetNetwork.Database.PersonalEvent;
+using DotNetIdentity.Database.Identity;
 
-namespace AspNetNetwork.Micro.IdentityAPI.Common.DependencyInjection;
+namespace DotNetIdentity.Api.Common.DependencyInjection;
 
 public static class DiDatabase
 {
@@ -25,16 +18,8 @@ public static class DiDatabase
             throw new ArgumentNullException(nameof(services));
         }
 
-        services.AddMongoDatabase(configuration);
+        //TODO services.AddMongoDatabase(configuration);
         services.AddUserDatabase(configuration);
-        services.AddAttendeesDatabase(configuration);
-        services.AddPersonalEventDatabase(configuration);
-        services.AddGroupEventDatabase(configuration);
-        services.AddInvitationsDatabase(configuration);
-        services.AddNotificationsDatabase(configuration);
-        
-        services.Configure<MongoSettings>(
-            configuration.GetSection(MongoSettings.MongoSettingsKey));
         
         return services;
     }

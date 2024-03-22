@@ -1,4 +1,4 @@
-﻿namespace AspNetNetwork.Domain.Common.Core.Primitives.Maybe;
+﻿namespace DotNetIdentity.Domain.Core.Primitives.Maybe;
 
 /// <summary>
 /// Represents a wrapper around a value that may or may not be null.

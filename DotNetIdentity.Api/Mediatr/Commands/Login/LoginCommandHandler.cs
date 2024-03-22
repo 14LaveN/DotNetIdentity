@@ -1,18 +1,17 @@
-using AspNetNetwork.Application.ApiHelpers.Responses;
-using AspNetNetwork.Application.Core.Abstractions.Messaging;
-using AspNetNetwork.Application.Core.Settings.User;
-using AspNetNetwork.Database.Identity.Data.Interfaces;
-using AspNetNetwork.Domain.Common.Core.Exceptions;
-using AspNetNetwork.Domain.Common.Core.Primitives.Result;
-using AspNetNetwork.Domain.Common.Enumerations;
-using AspNetNetwork.Domain.Identity.Entities;
-using AspNetNetwork.Micro.IdentityAPI.Extensions;
-using FluentValidation;
+using DotNetIdentity.Application.ApiHelpers.Responses;
+using DotNetIdentity.Application.Core.Abstractions.Messaging;
+using DotNetIdentity.Application.Core.Settings.User;
+using DotNetIdentity.Database.Identity.Data.Interfaces;
+using DotNetIdentity.Api.Extensions;
+using DotNetIdentity.Domain.Core.Exceptions;
+using DotNetIdentity.Domain.Core.Primitives.Result;
+using DotNetIdentity.Domain.Entities;
+using DotNetIdentity.Domain.Enumerations;
 using MailKit.Security;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Options;
 
-namespace AspNetNetwork.Micro.IdentityAPI.Mediatr.Commands.Login;
+namespace DotNetIdentity.Api.Mediatr.Commands.Login;
 
 /// <summary>
 /// Represents the login command handler class.
@@ -22,7 +21,8 @@ namespace AspNetNetwork.Micro.IdentityAPI.Mediatr.Commands.Login;
 /// <param name="userManager">The user manager.</param>
 /// <param name="jwtOptions">The json web token options.</param>
 /// <param name="signInManager">The sign in manager.</param>
-public sealed class LoginCommandHandler(ILogger<LoginCommandHandler> logger,
+public sealed class LoginCommandHandler(
+        ILogger<LoginCommandHandler> logger,
         IUserUnitOfWork unitOfWork,
         UserManager<User> userManager,
         IOptions<JwtOptions> jwtOptions,

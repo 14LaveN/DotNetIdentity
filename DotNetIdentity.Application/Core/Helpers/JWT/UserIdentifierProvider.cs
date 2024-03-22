@@ -1,8 +1,8 @@
 using System.Security.Claims;
 using Microsoft.AspNetCore.Http;
-using AspNetNetwork.Application.Core.Abstractions.Helpers.JWT;
+using DotNetIdentity.Application.Core.Abstractions.Helpers.JWT;
 
-namespace AspNetNetwork.Application.Core.Helpers.JWT;
+namespace DotNetIdentity.Application.Core.Helpers.JWT;
 
 /// <summary>
 /// Represents the user identifier provider.

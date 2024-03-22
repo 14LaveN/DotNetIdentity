@@ -2,7 +2,7 @@
 using Quartz;
 using Quartz.Spi;
 
-namespace AspNetNetwork.BackgroundTasks.QuartZ;
+namespace DotNetIdentity.BackgroundTasks.QuartZ;
 
 public sealed class QuartzJobFactory(IServiceScopeFactory serviceScopeFactory)
     : IJobFactory

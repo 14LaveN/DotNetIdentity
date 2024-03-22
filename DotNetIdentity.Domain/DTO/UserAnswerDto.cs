@@ -1,4 +1,4 @@
-namespace AspNetNetwork.Domain.Identity.DTO;
+namespace DotNetIdentity.Domain.Identity.DTO;
 
 /// <summary>
 /// Represents the user answer dto record.
