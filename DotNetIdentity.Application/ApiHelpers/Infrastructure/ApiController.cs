@@ -24,7 +24,6 @@ public class ApiController : ControllerBase
         ISender sender,
         IUserRepository userRepository, string controllerName)
     {
-        UserId = GetUserId().GetAwaiter().GetResult();
         Sender = sender;
         UserRepository = userRepository;
         ControllerName = controllerName;
@@ -37,68 +36,6 @@ public class ApiController : ControllerBase
     protected Maybe<Guid> UserId { get; }
 
     protected IUserRepository UserRepository { get; }
-
-    protected string? Token => 
-        ControllerName is "UsersController" ? "exceptToken" :
-            Request.Headers["Authorization"].FirstOrDefault()?.Split(" ").Last();
-
-    /// <summary>
-    /// Get name
-    /// </summary>
-    /// <returns>Base information about get name method</returns>
-    /// <remarks>
-    /// Example request:
-    /// </remarks>
-    /// <response code="200">Return name from token.</response>
-    /// <response code="400"></response>
-    /// <response code="500">Internal server error</response>
-    ///
-    /// 
-    [HttpGet("get-name")]
-    public  string GetName()
-    {
-        var name = BaseRetryPolicy.Policy.Execute(() =>
-            GetClaimByJwtToken.GetNameByToken(Token));
-        
-        ArgumentException
-            .ThrowIfNullOrEmpty(
-                name,
-                nameof(name));
-        
-        return name;
-    }
-
-    /// <summary>
-    /// Get profile
-    /// </summary>
-    /// <returns>Base information about get pfoile method</returns>
-    /// <remarks>
-    /// Example request:
-    /// </remarks>
-    /// <response code="200">Return app user</response>
-    /// <response code="400"></response>
-    /// <response code="500">Internal server error</response>
-    ///
-    
-    [HttpGet("get-profile")]
-    public async Task<Maybe<User>> GetProfile()
-    {
-        var name = GetName();
-        var profile = await BaseRetryPolicy.Policy.Execute(async () =>
-            await UserRepository.GetByNameAsync(name));
-
-        return profile;
-    }
-
-    [HttpGet("get-userId")]
-    public async Task<Maybe<Guid>> GetUserId()
-    {
-        string name = GetName();
-        var profile = await BaseRetryPolicy.Policy.Execute(async () =>
-            await UserRepository.GetByNameAsync(name));
-
-        return profile.Value.Id;
-    }
 
     [HttpGet("get-profile-by-id")]
     public async Task<Maybe<User>> GetProfileById(Guid authorId)

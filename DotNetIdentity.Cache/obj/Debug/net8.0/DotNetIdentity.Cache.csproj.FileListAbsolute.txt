@@ -1,0 +1,13 @@
+G:\DotNetProjects\DotNetIdentity\DotNetIdentity.Cache\bin\Debug\net8.0\DotNetIdentity.Cache.deps.json
+G:\DotNetProjects\DotNetIdentity\DotNetIdentity.Cache\bin\Debug\net8.0\DotNetIdentity.Cache.dll
+G:\DotNetProjects\DotNetIdentity\DotNetIdentity.Cache\bin\Debug\net8.0\DotNetIdentity.Cache.pdb
+G:\DotNetProjects\DotNetIdentity\DotNetIdentity.Cache\obj\Debug\net8.0\DotNetIdentity.Cache.csproj.AssemblyReference.cache
+G:\DotNetProjects\DotNetIdentity\DotNetIdentity.Cache\obj\Debug\net8.0\DotNetIdentity.Cache.GeneratedMSBuildEditorConfig.editorconfig
+G:\DotNetProjects\DotNetIdentity\DotNetIdentity.Cache\obj\Debug\net8.0\DotNetIdentity.Cache.AssemblyInfoInputs.cache
+G:\DotNetProjects\DotNetIdentity\DotNetIdentity.Cache\obj\Debug\net8.0\DotNetIdentity.Cache.AssemblyInfo.cs
+G:\DotNetProjects\DotNetIdentity\DotNetIdentity.Cache\obj\Debug\net8.0\DotNetIdentity.Cache.csproj.CoreCompileInputs.cache
+G:\DotNetProjects\DotNetIdentity\DotNetIdentity.Cache\obj\Debug\net8.0\DotNetIdentity.Cache.sourcelink.json
+G:\DotNetProjects\DotNetIdentity\DotNetIdentity.Cache\obj\Debug\net8.0\DotNetIdentity.Cache.dll
+G:\DotNetProjects\DotNetIdentity\DotNetIdentity.Cache\obj\Debug\net8.0\refint\DotNetIdentity.Cache.dll
+G:\DotNetProjects\DotNetIdentity\DotNetIdentity.Cache\obj\Debug\net8.0\DotNetIdentity.Cache.pdb
+G:\DotNetProjects\DotNetIdentity\DotNetIdentity.Cache\obj\Debug\net8.0\ref\DotNetIdentity.Cache.dll

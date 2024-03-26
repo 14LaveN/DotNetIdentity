@@ -1,5 +1,4 @@
-﻿using DotNetIdentity.Domain.Common.Core.Primitives;
-using DotNetIdentity.Domain.Core.Primitives;
+﻿using DotNetIdentity.Domain.Core.Primitives;
 using FluentValidation.Results;
 
 namespace DotNetIdentity.Application.Core.Exceptions;

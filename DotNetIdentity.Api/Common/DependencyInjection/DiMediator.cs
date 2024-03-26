@@ -1,3 +1,4 @@
+using DotNetIdentity.Api.Mediatr.Behaviors;
 using DotNetIdentity.Api.Mediatr.Commands.ChangeName;
 using DotNetIdentity.Application.Core.Behaviours;
 using DotNetIdentity.Api.Mediatr.Commands.ChangePassword;
@@ -38,10 +39,11 @@ public static class DiMediator
             x.RegisterServicesFromAssemblies(typeof(ChangeNameCommand).Assembly,
                 typeof(ChangeNameCommandHandler).Assembly);
             
-            x.AddBehavior(typeof(IPipelineBehavior<,>), typeof(ValidationBehaviour<,>));
-            x.AddBehavior(typeof(IPipelineBehavior<,>), typeof(UserTransactionBehaviour<,>));
-            x.AddBehavior(typeof(IPipelineBehavior<,>), typeof(MetricsBehaviour<,>));
             x.AddOpenBehavior(typeof(QueryCachingBehavior<,>));
+            x.AddOpenBehavior(typeof(UserTransactionBehavior<,>));
+            x.AddOpenBehavior(typeof(ValidationBehaviour<,>));
+            x.AddOpenBehavior(typeof(MetricsBehaviour<,>));
+            
             x.NotificationPublisher = new ForeachAwaitPublisher();
         });
         

@@ -1,4 +1,3 @@
-using DotNetIdentity.Domain.Common.Core.Primitives;
 using DotNetIdentity.Domain.Core.Errors;
 using DotNetIdentity.Domain.Core.Primitives;
 using DotNetIdentity.Domain.Core.Primitives.Result;

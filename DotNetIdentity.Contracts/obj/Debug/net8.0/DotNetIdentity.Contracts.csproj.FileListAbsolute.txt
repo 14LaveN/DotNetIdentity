@@ -1,0 +1,12 @@
+G:\DotNetProjects\DotNetIdentity\DotNetIdentity.Contracts\bin\Debug\net8.0\DotNetIdentity.Contracts.deps.json
+G:\DotNetProjects\DotNetIdentity\DotNetIdentity.Contracts\bin\Debug\net8.0\DotNetIdentity.Contracts.dll
+G:\DotNetProjects\DotNetIdentity\DotNetIdentity.Contracts\bin\Debug\net8.0\DotNetIdentity.Contracts.pdb
+G:\DotNetProjects\DotNetIdentity\DotNetIdentity.Contracts\obj\Debug\net8.0\DotNetIdentity.Contracts.GeneratedMSBuildEditorConfig.editorconfig
+G:\DotNetProjects\DotNetIdentity\DotNetIdentity.Contracts\obj\Debug\net8.0\DotNetIdentity.Contracts.AssemblyInfoInputs.cache
+G:\DotNetProjects\DotNetIdentity\DotNetIdentity.Contracts\obj\Debug\net8.0\DotNetIdentity.Contracts.AssemblyInfo.cs
+G:\DotNetProjects\DotNetIdentity\DotNetIdentity.Contracts\obj\Debug\net8.0\DotNetIdentity.Contracts.csproj.CoreCompileInputs.cache
+G:\DotNetProjects\DotNetIdentity\DotNetIdentity.Contracts\obj\Debug\net8.0\DotNetIdentity.Contracts.sourcelink.json
+G:\DotNetProjects\DotNetIdentity\DotNetIdentity.Contracts\obj\Debug\net8.0\DotNetIdentity.Contracts.dll
+G:\DotNetProjects\DotNetIdentity\DotNetIdentity.Contracts\obj\Debug\net8.0\refint\DotNetIdentity.Contracts.dll
+G:\DotNetProjects\DotNetIdentity\DotNetIdentity.Contracts\obj\Debug\net8.0\DotNetIdentity.Contracts.pdb
+G:\DotNetProjects\DotNetIdentity\DotNetIdentity.Contracts\obj\Debug\net8.0\ref\DotNetIdentity.Contracts.dll

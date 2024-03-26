@@ -26,7 +26,7 @@ public abstract class AbstractScheduler<T>
         ITrigger trigger = TriggerBuilder
             .Create()
             .WithIdentity($"{nameof(UserDbJob)}Trigger", "default")
-            .StartNow()
+            .StartAt(DateTimeOffset.UtcNow.Add(TimeSpan.FromMinutes(1)))
             .WithSimpleSchedule(x => x
                 .WithIntervalInSeconds(160)
                 .RepeatForever())

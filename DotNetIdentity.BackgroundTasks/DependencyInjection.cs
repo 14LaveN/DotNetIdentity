@@ -32,8 +32,9 @@ public static class BDependencyInjection
         {
             var jobKey = new JobKey(nameof(UserDbJob));
 
-            configure
-                .AddJob<UserDbJob>(jobKey);
+            //TODO configure
+            //TODO     .AddJob<UserDbJob>(jobKey)
+            //TODO     .AddTrigger();
             
             configure.UseMicrosoftDependencyInjectionJobFactory();
         });
@@ -54,7 +55,7 @@ public static class BDependencyInjection
         services.AddTransient<UserDbScheduler>();
         
         var scheduler = new UserDbScheduler();
-        scheduler.Start(services);
+        //scheduler.Start(services);
         
         return services;
     }

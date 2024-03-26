@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "tisbYNqk52UamUcr2sGPTxp+vwIzbRo/eBnV5mbvZ8o=",
+  "Source": "DotNetIdentity.Api",
+  "BasePath": "_content/DotNetIdentity.Api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

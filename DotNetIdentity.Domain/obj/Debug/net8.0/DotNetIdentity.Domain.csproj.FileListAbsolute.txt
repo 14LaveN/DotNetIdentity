@@ -1,0 +1,13 @@
+G:\DotNetProjects\DotNetIdentity\DotNetIdentity.Domain\obj\Debug\net8.0\DotNetIdentity.Domain.csproj.AssemblyReference.cache
+G:\DotNetProjects\DotNetIdentity\DotNetIdentity.Domain\obj\Debug\net8.0\DotNetIdentity.Domain.GeneratedMSBuildEditorConfig.editorconfig
+G:\DotNetProjects\DotNetIdentity\DotNetIdentity.Domain\obj\Debug\net8.0\DotNetIdentity.Domain.AssemblyInfoInputs.cache
+G:\DotNetProjects\DotNetIdentity\DotNetIdentity.Domain\obj\Debug\net8.0\DotNetIdentity.Domain.AssemblyInfo.cs
+G:\DotNetProjects\DotNetIdentity\DotNetIdentity.Domain\obj\Debug\net8.0\DotNetIdentity.Domain.csproj.CoreCompileInputs.cache
+G:\DotNetProjects\DotNetIdentity\DotNetIdentity.Domain\obj\Debug\net8.0\DotNetIdentity.Domain.sourcelink.json
+G:\DotNetProjects\DotNetIdentity\DotNetIdentity.Domain\bin\Debug\net8.0\DotNetIdentity.Domain.deps.json
+G:\DotNetProjects\DotNetIdentity\DotNetIdentity.Domain\bin\Debug\net8.0\DotNetIdentity.Domain.dll
+G:\DotNetProjects\DotNetIdentity\DotNetIdentity.Domain\bin\Debug\net8.0\DotNetIdentity.Domain.pdb
+G:\DotNetProjects\DotNetIdentity\DotNetIdentity.Domain\obj\Debug\net8.0\DotNetIdentity.Domain.dll
+G:\DotNetProjects\DotNetIdentity\DotNetIdentity.Domain\obj\Debug\net8.0\refint\DotNetIdentity.Domain.dll
+G:\DotNetProjects\DotNetIdentity\DotNetIdentity.Domain\obj\Debug\net8.0\DotNetIdentity.Domain.pdb
+G:\DotNetProjects\DotNetIdentity\DotNetIdentity.Domain\obj\Debug\net8.0\ref\DotNetIdentity.Domain.dll

@@ -1,6 +1,9 @@
 using DotNetIdentity.Application.Core.Abstractions.Messaging;
+using DotNetIdentity.Database.Identity;
 using DotNetIdentity.Database.Identity.Data.Interfaces;
+using DotNetIdentity.Domain.Entities;
 using MediatR;
+using Microsoft.EntityFrameworkCore;
 
 namespace DotNetIdentity.Api.Mediatr.Behaviors;
 
@@ -9,17 +12,24 @@ namespace DotNetIdentity.Api.Mediatr.Behaviors;
 /// </summary>
 internal sealed class UserTransactionBehavior<TRequest, TResponse> 
     : IPipelineBehavior<TRequest, TResponse>
-    where TRequest : class, IRequest<TResponse>
+    where TRequest : ICommand<TResponse>
     where TResponse : class
 {
     private readonly IUserUnitOfWork _unitOfWork;
+    private readonly UserDbContext _userDbContext;
 
     /// <summary>
     /// Initializes a new instance of the <see cref="UserTransactionBehavior{TRequest,TResponse}"/> class.
     /// </summary>
     /// <param name="unitOfWork">The user unit of work.</param>
-    public UserTransactionBehavior(IUserUnitOfWork unitOfWork) =>
+    /// <param name="userDbContext">The user database context.</param>
+    public UserTransactionBehavior(
+        IUserUnitOfWork unitOfWork,
+        UserDbContext userDbContext)
+    {
         _unitOfWork = unitOfWork;
+        _userDbContext = userDbContext;
+    }
 
     /// <inheritdoc/>
     public async Task<TResponse> Handle(
@@ -31,23 +41,29 @@ internal sealed class UserTransactionBehavior<TRequest, TResponse>
         {
             return await next();
         }
-
-        await using var transaction = await _unitOfWork.BeginTransactionAsync(cancellationToken);
-
-        try
+        
+        var strategy = _userDbContext.Database.CreateExecutionStrategy();
+        await strategy.ExecuteAsync(async () =>
         {
-            TResponse response = await next();
+            await using var transaction = await _unitOfWork.BeginTransactionAsync(cancellationToken);
 
-            await transaction.CommitAsync(cancellationToken);
-            await _unitOfWork.SaveChangesAsync(cancellationToken);
+            try
+            {
+                TResponse response = await next();
 
-            return response;
-        }
-        catch (Exception)
-        {
-            await transaction.RollbackAsync(cancellationToken);
+                await transaction.CommitAsync(cancellationToken);
+                await _unitOfWork.SaveChangesAsync(cancellationToken);
 
-            throw;
-        }
+                return response;
+            }
+            catch (Exception)
+            {
+                await transaction.RollbackAsync(cancellationToken);
+
+                throw;
+            }
+        });
+
+        throw new ArgumentException();
     }
 }

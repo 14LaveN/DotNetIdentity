@@ -1,5 +1,4 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
-using DotNetIdentity.Domain.Common.Core.Primitives;
 using DotNetIdentity.Domain.Core.Abstractions;
 using DotNetIdentity.Domain.Core.Errors;
 using DotNetIdentity.Domain.Core.Utility;
@@ -22,11 +21,13 @@ public sealed class User : IdentityUser<Guid>, IAuditableEntity, ISoftDeletableE
     /// <summary>
     /// Initializes a new instance of the <see cref="User"/> class.
     /// </summary>
+    /// <param name="userName">The user name.</param>
     /// <param name="firstName">The user first name.</param>
     /// <param name="lastName">The user last name.</param>
     /// <param name="emailAddress">The user emailAddress instance.</param>
     /// <param name="passwordHash">The user password hash.</param>
     public User(
+        string userName,
         FirstName firstName,
         LastName lastName,
         EmailAddress emailAddress,
@@ -36,7 +37,9 @@ public sealed class User : IdentityUser<Guid>, IAuditableEntity, ISoftDeletableE
         Ensure.NotEmpty(lastName, "The last name is required.", nameof(lastName));
         Ensure.NotEmpty(emailAddress, "The emailAddress is required.", nameof(emailAddress));
         Ensure.NotEmpty(passwordHash, "The password hash is required", nameof(passwordHash));
+        Ensure.NotEmpty(userName, "The user name is required", nameof(userName));
 
+        UserName = userName;
         FirstName = firstName;
         LastName = lastName;
         EmailAddress = emailAddress;
@@ -120,16 +123,18 @@ public sealed class User : IdentityUser<Guid>, IAuditableEntity, ISoftDeletableE
     /// </summary>
     /// <param name="firstName">The first name.</param>
     /// <param name="lastName">The last name.</param>
+    /// <param name="userName">The user name.</param>
     /// <param name="emailAddress">The emailAddress.</param>
     /// <param name="passwordHash">The password hash.</param>
     /// <returns>The newly created user instance.</returns>
     public static User Create(
         FirstName firstName,
         LastName lastName,
+        string userName,
         EmailAddress emailAddress,
         string passwordHash)
     {
-        var user = new User(firstName, lastName, emailAddress, passwordHash);
+        var user = new User(userName,firstName, lastName, emailAddress, passwordHash);
         
         user.AddDomainEvent(new UserCreatedDomainEvent(user));
 
@@ -145,7 +150,7 @@ public sealed class User : IdentityUser<Guid>, IAuditableEntity, ISoftDeletableE
     {
         if (passwordHash == PasswordHash)
         {
-            return Result.Failure(DomainErrors.User.CannotChangePassword);
+            return Result.Failure(DomainErrors.User.CannotChangePassword).GetAwaiter().GetResult();
         }
 
         PasswordHash = passwordHash;

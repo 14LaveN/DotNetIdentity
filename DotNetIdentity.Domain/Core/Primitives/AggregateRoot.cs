@@ -1,5 +1,4 @@
-﻿using DotNetIdentity.Domain.Common.Core.Primitives;
-using DotNetIdentity.Domain.Core.Events;
+﻿using DotNetIdentity.Domain.Core.Events;
 
 namespace DotNetIdentity.Domain.Core.Primitives;
 

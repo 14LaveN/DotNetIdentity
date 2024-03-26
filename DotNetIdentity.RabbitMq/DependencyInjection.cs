@@ -14,8 +14,6 @@ public static class DependencyInjection
             throw new ArgumentNullException(nameof(services));
         }
         
-        //services.Configure<MessageBrokerSettings>(configuration.GetSection(MessageBrokerSettings.SettingsKey));
-        
         services.AddScoped<IIntegrationEventPublisher, IntegrationEventPublisher>();
 
         services.AddHealthChecks()

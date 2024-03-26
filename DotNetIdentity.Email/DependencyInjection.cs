@@ -16,7 +16,7 @@ public static class DependencyInjection
         if (services is null)
             throw new ArgumentException();
     
-        // services.ConfigureOptions<MailSettings>(configuration.GetSection(MailSettings.SettingsKey));
+        //TODO services.ConfigureOptions<MailSettings>(configuration.GetSection(MailSettings.SettingsKey));
         
         services.AddScoped<IEmailService, EmailService>();
         services.AddScoped<IEmailNotificationService, EmailNotificationService>();

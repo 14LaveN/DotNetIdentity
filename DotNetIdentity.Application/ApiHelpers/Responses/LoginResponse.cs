@@ -6,7 +6,7 @@ namespace DotNetIdentity.Application.ApiHelpers.Responses;
 /// Gets or sets login response class.
 /// </summary>
 /// <typeparam name="T">The generic type.</typeparam>
-public class LoginResponse<T> 
+public sealed class LoginResponse<T> 
 {
     /// <summary>
     /// Gets or sets description.

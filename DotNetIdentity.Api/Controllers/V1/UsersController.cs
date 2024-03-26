@@ -114,7 +114,8 @@ public sealed class UsersController(
     [ProducesResponseType(typeof(ApiErrorResponse), StatusCodes.Status401Unauthorized)]
     public async Task<IActionResult> ChangePassword([FromBody] ChangeNameRequest request) =>
         await Result.Create(request, DomainErrors.General.UnProcessableRequest)
-            .Map(changeNameRequest => new ChangeNameCommand(FirstName.Create(changeNameRequest.FirstName).Value,
+            .Map(changeNameRequest => new ChangeNameCommand(
+                FirstName.Create(changeNameRequest.FirstName).Value,
                 LastName.Create(changeNameRequest.LastName).Value,
                 UserId))
             .Bind(async command => await BaseRetryPolicy.Policy.Execute(async () =>

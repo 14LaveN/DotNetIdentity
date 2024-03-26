@@ -1,0 +1,16 @@
+G:\DotNetProjects\DotNetIdentity\DotNetIdentity.Database.Identity\bin\Debug\net8.0\DotNetIdentity.Database.Identity.deps.json
+G:\DotNetProjects\DotNetIdentity\DotNetIdentity.Database.Identity\bin\Debug\net8.0\DotNetIdentity.Database.Identity.dll
+G:\DotNetProjects\DotNetIdentity\DotNetIdentity.Database.Identity\bin\Debug\net8.0\DotNetIdentity.Database.Identity.pdb
+G:\DotNetProjects\DotNetIdentity\DotNetIdentity.Database.Identity\bin\Debug\net8.0\DotNetIdentity.Domain.dll
+G:\DotNetProjects\DotNetIdentity\DotNetIdentity.Database.Identity\bin\Debug\net8.0\DotNetIdentity.Domain.pdb
+G:\DotNetProjects\DotNetIdentity\DotNetIdentity.Database.Identity\obj\Debug\net8.0\DotNetIdentity.Database.Identity.csproj.AssemblyReference.cache
+G:\DotNetProjects\DotNetIdentity\DotNetIdentity.Database.Identity\obj\Debug\net8.0\DotNetIdentity.Database.Identity.GeneratedMSBuildEditorConfig.editorconfig
+G:\DotNetProjects\DotNetIdentity\DotNetIdentity.Database.Identity\obj\Debug\net8.0\DotNetIdentity.Database.Identity.AssemblyInfoInputs.cache
+G:\DotNetProjects\DotNetIdentity\DotNetIdentity.Database.Identity\obj\Debug\net8.0\DotNetIdentity.Database.Identity.AssemblyInfo.cs
+G:\DotNetProjects\DotNetIdentity\DotNetIdentity.Database.Identity\obj\Debug\net8.0\DotNetIdentity.Database.Identity.csproj.CoreCompileInputs.cache
+G:\DotNetProjects\DotNetIdentity\DotNetIdentity.Database.Identity\obj\Debug\net8.0\DotNetIdentity.Database.Identity.sourcelink.json
+G:\DotNetProjects\DotNetIdentity\DotNetIdentity.Database.Identity\obj\Debug\net8.0\DotNetIdentity.Database.Identity.csproj.CopyComplete
+G:\DotNetProjects\DotNetIdentity\DotNetIdentity.Database.Identity\obj\Debug\net8.0\DotNetIdentity.Database.Identity.dll
+G:\DotNetProjects\DotNetIdentity\DotNetIdentity.Database.Identity\obj\Debug\net8.0\refint\DotNetIdentity.Database.Identity.dll
+G:\DotNetProjects\DotNetIdentity\DotNetIdentity.Database.Identity\obj\Debug\net8.0\DotNetIdentity.Database.Identity.pdb
+G:\DotNetProjects\DotNetIdentity\DotNetIdentity.Database.Identity\obj\Debug\net8.0\ref\DotNetIdentity.Database.Identity.dll

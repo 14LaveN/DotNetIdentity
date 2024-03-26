@@ -1,7 +1,10 @@
 using System.Security.Authentication;
+using DotNetIdentity.Api.Extensions;
 using DotNetIdentity.Application.ApiHelpers.Responses;
 using DotNetIdentity.Application.Core.Abstractions.Messaging;
 using DotNetIdentity.Api.Mediatr.Commands.Login;
+using DotNetIdentity.Application.Core.Settings.User;
+using DotNetIdentity.Database.Identity;
 using DotNetIdentity.Domain.Core.Exceptions;
 using DotNetIdentity.Domain.Core.Primitives.Result;
 using DotNetIdentity.Domain.Entities;
@@ -9,6 +12,7 @@ using DotNetIdentity.Domain.Enumerations;
 using DotNetIdentity.Domain.ValueObjects;
 using MediatR;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.Extensions.Options;
 
 namespace DotNetIdentity.Api.Mediatr.Commands.Register;
 
@@ -23,9 +27,11 @@ public sealed class RegisterCommandHandler(
         ILogger<RegisterCommandHandler> logger,
         UserManager<User> userManager,
         ISender sender,
-        SignInManager<User> signInManager)
+        SignInManager<User> signInManager,
+        IOptions<JwtOptions> jwtOptions)
     : ICommandHandler<RegisterCommand, LoginResponse<Result>>
 {
+    private readonly JwtOptions _jwtOptions = jwtOptions.Value;
     private readonly SignInManager<User> _signInManager = signInManager ?? throw new ArgumentNullException();
  
     /// <inheritdoc />
@@ -50,31 +56,33 @@ public sealed class RegisterCommandHandler(
                 throw new NotFoundException(nameof(user), "User with the same name");
             }
 
-            user = User.Create(firstNameResult.Value, lastNameResult.Value, emailResult.Value, passwordResult.Value);
+            user = User.Create(firstNameResult.Value, lastNameResult.Value,request.UserName, emailResult.Value, passwordResult.Value);
             
             var result = await userManager.CreateAsync(user, request.Password);
-            
-            LoginResponse<Result> loginResponse = new LoginResponse<Result>
-            {
-                Description = "",
-                StatusCode = StatusCode.TaskIsHasAlready
-            };
 
             if (result.Succeeded)
             {
                 await _signInManager.SignInAsync(user, false);
-                loginResponse = await sender.Send(new LoginCommand(request.UserName,request.Password), cancellationToken);
-
+                
+                
+                
                 logger.LogInformation($"User authorized - {user.UserName} {DateTime.UtcNow}");
             }
+            var (refreshToken, refreshTokenExpireAt) = user.GenerateRefreshToken(_jwtOptions);
+            
+            if (result.Succeeded)
+            {
+                user.RefreshToken = refreshToken;
+            }
+            
             return new LoginResponse<Result>
             {
                 Description = "Register account",
                 StatusCode = StatusCode.Ok,
                 Data = Result.Success(),
-                AccessToken = loginResponse.AccessToken, 
-                RefreshToken = loginResponse.RefreshToken,
-                RefreshTokenExpireAt = loginResponse.RefreshTokenExpireAt
+                AccessToken = user.GenerateAccessToken(_jwtOptions),
+                RefreshToken = refreshToken,
+                RefreshTokenExpireAt = refreshTokenExpireAt
             };
         }
         catch (Exception exception)
