@@ -15,8 +15,7 @@ public static class IdentityConfiguration
     public static IEnumerable<ApiScope> ApiScopes =>
         new List<ApiScope>
         {
-            new("ProgrammerAnswers.Micro.QuestionsAPI", "Question API"),
-            new("ProgrammerAnswers.Micro.ImageAPI", "Image API")
+            new("DotNetIdentity.Api", "DotNetIdentity Api")
         };
 
     /// <summary>
@@ -35,16 +34,11 @@ public static class IdentityConfiguration
     public static IEnumerable<ApiResource> ApiResources =>
         new List<ApiResource>
         {
-            new("ProgrammerAnswers.Micro.QuestionsAPI", "Question API", new []
+            new("DotNetIdentity.Api", "DotNetIdentity Api", new []
                 { JwtClaimTypes.Name})
             {
-                Scopes = {"ProgrammerAnswers.Micro.QuestionsAPI"}
-            },
-            new("ProgrammerAnswers.Micro.ImageAPI", "Image API", new []
-                { JwtClaimTypes.Name})
-            {
-                Scopes = {"ProgrammerAnswers.Micro.ImageAPI"}
-            },
+                Scopes = {"DotNetIdentity.Api"}
+            }
         };
 
     /// <summary>
@@ -55,55 +49,28 @@ public static class IdentityConfiguration
         {
             new Client
             {
-                ClientId = "ProgrammerAnswers.Micro-image",
-                ClientName = "ProgrammerAnswers.Micro Image",
+                ClientId = "DotNetIdentity.Api",
+                ClientName = "DotNetIdentity.Api",
                 AllowedGrantTypes = GrantTypes.Code,
                 RequireClientSecret = false,
                 RequirePkce = true,
                 RedirectUris =
                 {
-                    "http://localhost:44460/signin"
+                    "http://localhost:7276/signin"
                 },
                 AllowedCorsOrigins =
                 {
-                    "http://localhost:44460"
+                    "http://localhost:7276"
                 },
                 PostLogoutRedirectUris =
                 {
-                    "http://localhost:44460/signout"
+                    "http://localhost:7276/signout"
                 },
                 AllowedScopes =
                 {
                     IdentityServerConstants.StandardScopes.OpenId,
                     IdentityServerConstants.StandardScopes.Profile,
-                    "ProgrammerAnswers.Micro.ImageAPI"
-                },
-                AllowAccessTokensViaBrowser = true
-            },
-            new Client
-            {
-                ClientId = "ProgrammerAnswers.Micro-question",
-                ClientName = "ProgrammerAnswers.Micro Question",
-                AllowedGrantTypes = GrantTypes.Code,
-                RequireClientSecret = false,
-                RequirePkce = true,
-                RedirectUris =
-                {
-                    "http://localhost:44460/signin"
-                },
-                AllowedCorsOrigins =
-                {
-                    "http://localhost:44460"
-                },
-                PostLogoutRedirectUris =
-                {
-                    "http://localhost:44460/signout"
-                },
-                AllowedScopes =
-                {
-                    IdentityServerConstants.StandardScopes.OpenId,
-                    IdentityServerConstants.StandardScopes.Profile,
-                    "ProgrammerAnswers.Micro.QuestionAPI"
+                    "DotNetIdentity.Api"
                 },
                 AllowAccessTokensViaBrowser = true
             }

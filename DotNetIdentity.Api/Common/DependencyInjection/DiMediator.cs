@@ -44,7 +44,7 @@ public static class DiMediator
             x.AddOpenBehavior(typeof(ValidationBehaviour<,>));
             x.AddOpenBehavior(typeof(MetricsBehaviour<,>));
             
-            x.NotificationPublisher = new ForeachAwaitPublisher();
+            x.NotificationPublisher = new TaskWhenAllPublisher();
         });
         
         return services;

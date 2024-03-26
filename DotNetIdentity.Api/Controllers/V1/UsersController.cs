@@ -112,7 +112,7 @@ public sealed class UsersController(
     [HttpPost(ApiRoutes.Users.ChangeName)]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(ApiErrorResponse), StatusCodes.Status401Unauthorized)]
-    public async Task<IActionResult> ChangePassword([FromBody] ChangeNameRequest request) =>
+    public async Task<IActionResult> ChangeName([FromBody] ChangeNameRequest request) =>
         await Result.Create(request, DomainErrors.General.UnProcessableRequest)
             .Map(changeNameRequest => new ChangeNameCommand(
                 FirstName.Create(changeNameRequest.FirstName).Value,

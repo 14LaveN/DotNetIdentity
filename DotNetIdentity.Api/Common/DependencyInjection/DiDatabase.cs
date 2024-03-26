@@ -17,8 +17,7 @@ public static class DiDatabase
         {
             throw new ArgumentNullException(nameof(services));
         }
-
-        //TODO services.AddMongoDatabase(configuration);
+        
         services.AddUserDatabase(configuration);
         
         return services;

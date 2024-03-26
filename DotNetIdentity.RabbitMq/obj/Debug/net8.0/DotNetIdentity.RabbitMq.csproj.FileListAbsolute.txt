@@ -20,3 +20,5 @@ G:\DotNetProjects\DotNetIdentity\DotNetIdentity.RabbitMq\obj\Debug\net8.0\DotNet
 G:\DotNetProjects\DotNetIdentity\DotNetIdentity.RabbitMq\obj\Debug\net8.0\refint\DotNetIdentity.RabbitMq.dll
 G:\DotNetProjects\DotNetIdentity\DotNetIdentity.RabbitMq\obj\Debug\net8.0\DotNetIdentity.RabbitMq.pdb
 G:\DotNetProjects\DotNetIdentity\DotNetIdentity.RabbitMq\obj\Debug\net8.0\ref\DotNetIdentity.RabbitMq.dll
+G:\DotNetProjects\DotNetIdentity\DotNetIdentity.RabbitMq\bin\Debug\net8.0\testhost.exe
+G:\DotNetProjects\DotNetIdentity\DotNetIdentity.RabbitMq\bin\Debug\net8.0\testhost.dll

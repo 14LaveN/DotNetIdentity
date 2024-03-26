@@ -12,7 +12,7 @@ namespace DotNetIdentity.Application.Core.Behaviours;
 /// <typeparam name="TResponse">The generic response type.</typeparam>
 public sealed class MetricsBehaviour<TRequest, TResponse>
     : IPipelineBehavior<TRequest, TResponse>
-    where TRequest : class, IRequest
+    where TRequest : ICommand<TResponse>
     where TResponse : class
 {
     private readonly CreateMetricsHelper _createMetricsHelper;
@@ -25,7 +25,10 @@ public sealed class MetricsBehaviour<TRequest, TResponse>
         _createMetricsHelper = createMetricsHelper;
     
     /// <inheritdoc/>
-    public async Task<TResponse> Handle(TRequest request, RequestHandlerDelegate<TResponse> next, CancellationToken cancellationToken)
+    public async Task<TResponse> Handle(
+        TRequest request,
+        RequestHandlerDelegate<TResponse> next,
+        CancellationToken cancellationToken)
     {
         Stopwatch stopwatch = Stopwatch.StartNew();
 

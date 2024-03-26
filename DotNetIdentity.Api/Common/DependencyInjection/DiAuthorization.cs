@@ -51,7 +51,7 @@ public static class DiAuthorization
                     ValidateLifetime = true,
                     ValidateIssuerSigningKey = true,
                     ValidIssuers = new[] { configuration["Jwt:ValidIssuers"] },
-                    ValidAudiences = new List<string>(){"https://localhost:7124/", "https://localhost:7269/", "https://localhost:7093/", configuration["Jwt:ValidAudiences"]}, // OR "https://localhost:7117/", "https://localhost:7093/"
+                    ValidAudiences = new List<string>(){"https://localhost:7276/", "https://localhost:7276/", "https://localhost:7276/", configuration["Jwt:ValidAudiences"]},
                     IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["Jwt:Secret"]))
                 };
                 options.Events = new JwtBearerEvents

@@ -3,6 +3,7 @@ using DotNetIdentity.Application.Core.Abstractions.Messaging;
 using DotNetIdentity.Application.Core.Settings.User;
 using DotNetIdentity.Database.Identity.Data.Interfaces;
 using DotNetIdentity.Api.Extensions;
+using DotNetIdentity.Application.Core.Abstractions.Helpers.JWT;
 using DotNetIdentity.Domain.Core.Exceptions;
 using DotNetIdentity.Domain.Core.Primitives.Result;
 using DotNetIdentity.Domain.Entities;
@@ -17,13 +18,11 @@ namespace DotNetIdentity.Api.Mediatr.Commands.Login;
 /// Represents the login command handler class.
 /// </summary>
 /// <param name="logger">The logger.</param>
-/// <param name="unitOfWork">The user unit of work.</param>
 /// <param name="userManager">The user manager.</param>
 /// <param name="jwtOptions">The json web token options.</param>
 /// <param name="signInManager">The sign in manager.</param>
 public sealed class LoginCommandHandler(
         ILogger<LoginCommandHandler> logger,
-        IUserUnitOfWork unitOfWork,
         UserManager<User> userManager,
         IOptions<JwtOptions> jwtOptions,
         SignInManager<User> signInManager)
@@ -63,11 +62,10 @@ public sealed class LoginCommandHandler(
             if (result.Succeeded)
             {
                 user.RefreshToken = refreshToken;
-                await unitOfWork.SaveChangesAsync(cancellationToken);
             }
             
             logger.LogInformation($"User logged in - {user.UserName} {DateTime.UtcNow}");
-        
+            
             return new LoginResponse<Result>
             {
                 Description = "Login account",

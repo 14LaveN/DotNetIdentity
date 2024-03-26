@@ -26,28 +26,21 @@ public sealed class IntegrationEventPublisher : IIntegrationEventPublisher
 
         return connection;
     }
-    
-    /// <summary>
-    /// Initialize channel.
-    /// </summary>
-    /// <returns>Returns channel for RabbitMQ.</returns>
-    private static async Task<IChannel> CreateChannel()
+
+    /// <inheritdoc />
+    public async Task Publish(IIntegrationEvent integrationEvent)
     {
         var connection = await CreateConnection();
         var channel = await connection.CreateChannelAsync();
 
         await channel.QueueDeclareAsync(MessageBrokerSettings.QueueName, false, false, false);
+
+        await channel.ExchangeDeclareAsync(MessageBrokerSettings.QueueName + "Exchange", ExchangeType.Direct, durable: false);
+        
         await channel.QueueBindAsync(MessageBrokerSettings.QueueName,
             exchange: MessageBrokerSettings.QueueName + "Exchange",
             routingKey: MessageBrokerSettings.QueueName);
 
-        return channel;
-    }
-
-    /// <inheritdoc />
-    public async Task Publish(IIntegrationEvent integrationEvent)
-    {
-        var channel = await CreateChannel();
         string payload = JsonSerializer.Serialize(integrationEvent, typeof(IIntegrationEvent));
 
         var body = Encoding.UTF8.GetBytes(payload);

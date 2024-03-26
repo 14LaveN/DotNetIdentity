@@ -24,3 +24,5 @@ G:\DotNetProjects\DotNetIdentity\DotNetIdentity.BackgroundTasks\obj\Debug\net8.0
 G:\DotNetProjects\DotNetIdentity\DotNetIdentity.BackgroundTasks\obj\Debug\net8.0\refint\DotNetIdentity.BackgroundTasks.dll
 G:\DotNetProjects\DotNetIdentity\DotNetIdentity.BackgroundTasks\obj\Debug\net8.0\DotNetIdentity.BackgroundTasks.pdb
 G:\DotNetProjects\DotNetIdentity\DotNetIdentity.BackgroundTasks\obj\Debug\net8.0\ref\DotNetIdentity.BackgroundTasks.dll
+G:\DotNetProjects\DotNetIdentity\DotNetIdentity.BackgroundTasks\bin\Debug\net8.0\testhost.exe
+G:\DotNetProjects\DotNetIdentity\DotNetIdentity.BackgroundTasks\bin\Debug\net8.0\testhost.dll

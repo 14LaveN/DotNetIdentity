@@ -1,8 +1,10 @@
 using DotNetIdentity.Database.Identity.Data.Interfaces;
 using DotNetIdentity.Database.Identity.Data.Repositories;
+using MediatR.NotificationPublishers;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.VisualStudio.TestPlatform.TestHost;
 
 namespace DotNetIdentity.Database.Identity;
 
@@ -23,6 +25,13 @@ public static class DependencyInjection
         }
         
         var connectionString = configuration.GetConnectionString("DNIGenericDb");
+
+        services.AddMediatR(x =>
+        {
+            x.RegisterServicesFromAssemblyContaining<Program>();
+
+            x.NotificationPublisher = new TaskWhenAllPublisher();
+        });
         
         services.AddDbContext<UserDbContext>(o => 
             o.UseNpgsql(connectionString, act 

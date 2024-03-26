@@ -1,4 +1,7 @@
+using DotNetIdentity.Domain.Events.User;
 using DotNetIdentity.RabbitMq.Messaging;
+using DotNetIdentity.RabbitMq.Messaging.Settings;
+using DotNetIdentity.RabbitMq.Messaging.User.Events.UserCreated;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -13,6 +16,10 @@ public static class DependencyInjection
         {
             throw new ArgumentNullException(nameof(services));
         }
+
+        services.AddMediatR(x =>
+            x.RegisterServicesFromAssemblies(typeof(UserCreatedDomainEvent).Assembly,
+                typeof(PublishIntegrationEventOnUserCreatedDomainEventHandler).Assembly));
         
         services.AddScoped<IIntegrationEventPublisher, IntegrationEventPublisher>();
 

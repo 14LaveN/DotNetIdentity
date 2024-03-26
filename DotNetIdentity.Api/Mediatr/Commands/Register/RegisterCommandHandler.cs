@@ -64,10 +64,9 @@ public sealed class RegisterCommandHandler(
             {
                 await _signInManager.SignInAsync(user, false);
                 
-                
-                
                 logger.LogInformation($"User authorized - {user.UserName} {DateTime.UtcNow}");
             }
+            
             var (refreshToken, refreshTokenExpireAt) = user.GenerateRefreshToken(_jwtOptions);
             
             if (result.Succeeded)

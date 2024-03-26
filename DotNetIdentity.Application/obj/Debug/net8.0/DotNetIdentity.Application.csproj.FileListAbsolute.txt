@@ -18,3 +18,5 @@ G:\DotNetProjects\DotNetIdentity\DotNetIdentity.Application\obj\Debug\net8.0\Dot
 G:\DotNetProjects\DotNetIdentity\DotNetIdentity.Application\obj\Debug\net8.0\refint\DotNetIdentity.Application.dll
 G:\DotNetProjects\DotNetIdentity\DotNetIdentity.Application\obj\Debug\net8.0\DotNetIdentity.Application.pdb
 G:\DotNetProjects\DotNetIdentity\DotNetIdentity.Application\obj\Debug\net8.0\ref\DotNetIdentity.Application.dll
+G:\DotNetProjects\DotNetIdentity\DotNetIdentity.Application\bin\Debug\net8.0\testhost.exe
+G:\DotNetProjects\DotNetIdentity\DotNetIdentity.Application\bin\Debug\net8.0\testhost.dll

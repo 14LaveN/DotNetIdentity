@@ -15,7 +15,7 @@ public sealed class UserRepository(UserDbContext userDbContext)
 {
     /// <inheritdoc />
     public async Task<Maybe<User>> GetByIdAsync(Guid userId) =>
-            await userDbContext.Set<User>().FirstOrDefaultAsync(x=>x.Id == userId) 
+        await userDbContext.Set<User>().FirstOrDefaultAsync(u => u.Id == userId)
             ?? throw new ArgumentNullException();
 
     /// <inheritdoc />

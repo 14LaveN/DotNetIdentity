@@ -14,3 +14,5 @@ G:\DotNetProjects\DotNetIdentity\DotNetIdentity.Database.Identity\obj\Debug\net8
 G:\DotNetProjects\DotNetIdentity\DotNetIdentity.Database.Identity\obj\Debug\net8.0\refint\DotNetIdentity.Database.Identity.dll
 G:\DotNetProjects\DotNetIdentity\DotNetIdentity.Database.Identity\obj\Debug\net8.0\DotNetIdentity.Database.Identity.pdb
 G:\DotNetProjects\DotNetIdentity\DotNetIdentity.Database.Identity\obj\Debug\net8.0\ref\DotNetIdentity.Database.Identity.dll
+G:\DotNetProjects\DotNetIdentity\DotNetIdentity.Database.Identity\bin\Debug\net8.0\testhost.exe
+G:\DotNetProjects\DotNetIdentity\DotNetIdentity.Database.Identity\bin\Debug\net8.0\testhost.dll

@@ -6,7 +6,7 @@ namespace DotNetIdentity.Database.Identity.Data.Repositories;
 /// <summary>
 /// Represents the user unit of work.
 /// </summary>
-public sealed class UserUnitOfWork(UserDbContext userDbContext)
+internal sealed class UserUnitOfWork(UserDbContext userDbContext)
     : IUserUnitOfWork
 {
     /// <summary>

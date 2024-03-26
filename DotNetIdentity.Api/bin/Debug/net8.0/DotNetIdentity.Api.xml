@@ -386,17 +386,15 @@
             Represents the login command handler class.
             </summary>
             <param name="logger">The logger.</param>
-            <param name="unitOfWork">The user unit of work.</param>
             <param name="userManager">The user manager.</param>
             <param name="jwtOptions">The json web token options.</param>
             <param name="signInManager">The sign in manager.</param>
         </member>
-        <member name="M:DotNetIdentity.Api.Mediatr.Commands.Login.LoginCommandHandler.#ctor(Microsoft.Extensions.Logging.ILogger{DotNetIdentity.Api.Mediatr.Commands.Login.LoginCommandHandler},DotNetIdentity.Database.Identity.Data.Interfaces.IUserUnitOfWork,Microsoft.AspNetCore.Identity.UserManager{DotNetIdentity.Domain.Entities.User},Microsoft.Extensions.Options.IOptions{DotNetIdentity.Application.Core.Settings.User.JwtOptions},Microsoft.AspNetCore.Identity.SignInManager{DotNetIdentity.Domain.Entities.User})">
+        <member name="M:DotNetIdentity.Api.Mediatr.Commands.Login.LoginCommandHandler.#ctor(Microsoft.Extensions.Logging.ILogger{DotNetIdentity.Api.Mediatr.Commands.Login.LoginCommandHandler},Microsoft.AspNetCore.Identity.UserManager{DotNetIdentity.Domain.Entities.User},Microsoft.Extensions.Options.IOptions{DotNetIdentity.Application.Core.Settings.User.JwtOptions},Microsoft.AspNetCore.Identity.SignInManager{DotNetIdentity.Domain.Entities.User})">
             <summary>
             Represents the login command handler class.
             </summary>
             <param name="logger">The logger.</param>
-            <param name="unitOfWork">The user unit of work.</param>
             <param name="userManager">The user manager.</param>
             <param name="jwtOptions">The json web token options.</param>
             <param name="signInManager">The sign in manager.</param>

@@ -7,7 +7,7 @@ namespace DotNetIdentity.RabbitMq.Messaging.User.Events.UserCreated;
 /// <summary>
 /// Represents the <see cref="UserCreatedDomainEvent"/> handler.
 /// </summary>
-public sealed class PublishIntegrationEventOnUserCreatedDomainEventHandler : IDomainEventHandler<UserCreatedDomainEvent>
+internal sealed class PublishIntegrationEventOnUserCreatedDomainEventHandler : IDomainEventHandler<UserCreatedDomainEvent>
 {
     private readonly IIntegrationEventPublisher _integrationEventPublisher;
 
