@@ -184,7 +184,7 @@
             <response code="400">Bad request.</response>
             <response code="500">Internal server error.</response>
         </member>
-        <member name="M:DotNetIdentity.Api.Controllers.V1.UsersController.ChangePassword(DotNetIdentity.Api.Contracts.Users.ChangeName.ChangeNameRequest)">
+        <member name="M:DotNetIdentity.Api.Controllers.V1.UsersController.ChangeName(DotNetIdentity.Api.Contracts.Users.ChangeName.ChangeNameRequest)">
             <summary>
             Change name from user.
             </summary>

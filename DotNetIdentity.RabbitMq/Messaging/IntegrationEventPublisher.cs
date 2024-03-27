@@ -30,8 +30,8 @@ public sealed class IntegrationEventPublisher : IIntegrationEventPublisher
     /// <inheritdoc />
     public async Task Publish(IIntegrationEvent integrationEvent)
     {
-        var connection = await CreateConnection();
-        var channel = await connection.CreateChannelAsync();
+        using var connection = await CreateConnection();
+        using var channel = await connection.CreateChannelAsync();
 
         await channel.QueueDeclareAsync(MessageBrokerSettings.QueueName, false, false, false);
 
@@ -48,7 +48,5 @@ public sealed class IntegrationEventPublisher : IIntegrationEventPublisher
         if (MessageBrokerSettings.QueueName is not null)
             await channel.BasicPublishAsync(MessageBrokerSettings.QueueName + "Exchange",
                 MessageBrokerSettings.QueueName, body: body);
-
-        await channel.CloseAsync();
     }
 }

@@ -16,7 +16,7 @@ public sealed class UserCreatedIntegrationEvent : IIntegrationEvent
     internal UserCreatedIntegrationEvent(UserCreatedDomainEvent userCreatedDomainEvent) => UserId = userCreatedDomainEvent.User.Id;
         
     [JsonConstructor]
-    private UserCreatedIntegrationEvent(Guid userId) => UserId = userId;
+    public UserCreatedIntegrationEvent(Guid userId) => UserId = userId;
 
     /// <summary>
     /// Gets the user identifier.

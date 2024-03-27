@@ -5,6 +5,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using DotNetIdentity.BackgroundTasks.Services;
 using DotNetIdentity.RabbitMq.Messaging.Settings;
+using DotNetIdentity.RabbitMq.Messaging.User.Events.UserCreated;
 using Newtonsoft.Json;
 using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
@@ -82,7 +83,7 @@ internal  sealed class IntegrationEventConsumerBackgroundService : IHostedServic
     {
         string body = Encoding.UTF8.GetString(eventArgs.Body.Span);
 
-        var integrationEvent = JsonConvert.DeserializeObject<IIntegrationEvent>(body, new JsonSerializerSettings
+        var integrationEvent = JsonConvert.DeserializeObject<UserCreatedIntegrationEvent>(body, new JsonSerializerSettings
         {
             TypeNameHandling = TypeNameHandling.Auto
         });
