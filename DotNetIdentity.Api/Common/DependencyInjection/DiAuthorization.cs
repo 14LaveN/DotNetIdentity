@@ -1,5 +1,6 @@
 using System.Text;
 using System.Text.Json;
+using DotNetIdentity.Application.Core.Helpers.JWT;
 using DotNetIdentity.Application.Core.Settings.User;
 using DotNetIdentity.Database.Identity;
 using DotNetIdentity.Domain.Entities;
@@ -99,7 +100,7 @@ public static class DiAuthorization
         services.Configure<JwtOptions>(configuration.GetSection("Jwt"));
         
         services.AddSingleton<IAuthorizationHandler, RequireScopeHandler>();
-
+        
         services.AddAuthorization();
         
         services.ConfigureApplicationCookie(config =>

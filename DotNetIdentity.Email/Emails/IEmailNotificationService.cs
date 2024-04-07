@@ -1,6 +1,6 @@
 ﻿using DotNetIdentity.Email.Contracts.Emails;
 
-namespace DotNetIdentity.Application.Core.Abstractions.Notifications;
+namespace DotNetIdentity.Email.Emails;
 
 /// <summary>
 /// Represents the emailAddress notification service interface.

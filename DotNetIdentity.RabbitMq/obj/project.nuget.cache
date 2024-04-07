@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "jEYsLzCtgDD/bObnq895K7w06jtM9CdOCzCSUQ2B6gTRx2sc2N+p3vOkpJC7YI0TsobQqHa87ZScHCVHFLSqlg==",
+  "dgSpecHash": "AUJTmpKES4PGHOzgBG5o3s8RNd2+F+C7KOmwXM/nMz4kLbMCjbYOJc9XKTNi/4lYlS2RjN/Z2dVhd2x8j1EW9g==",
   "success": true,
   "projectFilePath": "G:\\DotNetProjects\\DotNetIdentity\\DotNetIdentity.RabbitMq\\DotNetIdentity.RabbitMq.csproj",
   "expectedPackageFiles": [

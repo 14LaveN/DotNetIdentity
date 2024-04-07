@@ -2520,7 +2520,10 @@
         },
         "runtime": {
           "bin/placeholder/DotNetIdentity.Database.Identity.dll": {}
-        }
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
       },
       "DotNetIdentity.Domain/1.0.0": {
         "type": "project",

@@ -6,6 +6,7 @@ using DotNetIdentity.BackgroundTasks;
 using DotNetIdentity.BackgroundTasks.QuartZ.Schedulers;
 using DotNetIdentity.Email;
 using DotNetIdentity.Api.Common.DependencyInjection;
+using DotNetIdentity.Database.Identity.Data;
 using DotNetIdentity.RabbitMq;
 using HealthChecks.UI.Client;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
@@ -81,6 +82,7 @@ scheduler.Start(builder.Services);
 if (app.Environment.IsDevelopment())
 {
     app.UseSwaggerApp();
+    app.ApplyMigrations();
 }
 
 app.UseCors();

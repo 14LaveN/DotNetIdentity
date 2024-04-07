@@ -1,4 +1,3 @@
-using DotNetIdentity.Application.Core.Abstractions.Notifications;
 using DotNetIdentity.Email.Contracts.Emails;
 
 namespace DotNetIdentity.Email.Emails;

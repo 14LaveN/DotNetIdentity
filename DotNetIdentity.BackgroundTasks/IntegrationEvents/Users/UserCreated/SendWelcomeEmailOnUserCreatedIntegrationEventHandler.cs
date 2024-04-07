@@ -1,11 +1,11 @@
-﻿using DotNetIdentity.Application.Core.Abstractions.Notifications;
-using DotNetIdentity.BackgroundTasks.Abstractions.Messaging;
+﻿using DotNetIdentity.BackgroundTasks.Abstractions.Messaging;
 using DotNetIdentity.Database.Identity.Data.Interfaces;
 using DotNetIdentity.Domain.Core.Errors;
 using DotNetIdentity.Domain.Core.Exceptions;
 using DotNetIdentity.Domain.Core.Primitives.Maybe;
 using DotNetIdentity.Domain.Entities;
 using DotNetIdentity.Email.Contracts.Emails;
+using DotNetIdentity.Email.Emails;
 using DotNetIdentity.RabbitMq.Messaging.User.Events.UserCreated;
 
 namespace DotNetIdentity.BackgroundTasks.IntegrationEvents.Users.UserCreated;
