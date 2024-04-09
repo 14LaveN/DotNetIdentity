@@ -21,7 +21,7 @@ namespace DotNetIdentity.Api.Mediatr.Commands.Login;
 /// <param name="userManager">The user manager.</param>
 /// <param name="jwtOptions">The json web token options.</param>
 /// <param name="signInManager">The sign in manager.</param>
-public sealed class LoginCommandHandler(
+internal sealed class LoginCommandHandler(
         ILogger<LoginCommandHandler> logger,
         UserManager<User> userManager,
         IOptions<JwtOptions> jwtOptions,

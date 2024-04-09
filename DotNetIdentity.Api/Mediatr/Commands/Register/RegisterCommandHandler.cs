@@ -23,7 +23,7 @@ namespace DotNetIdentity.Api.Mediatr.Commands.Register;
 /// <param name="userManager">The user manager.</param>
 /// <param name="sender">The sender.</param>
 /// <param name="signInManager">The sign in manager.</param>
-public sealed class RegisterCommandHandler(
+internal sealed class RegisterCommandHandler(
         ILogger<RegisterCommandHandler> logger,
         UserManager<User> userManager,
         ISender sender,

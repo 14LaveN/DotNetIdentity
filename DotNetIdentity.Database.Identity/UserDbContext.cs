@@ -16,7 +16,7 @@ namespace DotNetIdentity.Database.Identity;
 /// <summary>
 /// Represents the application database context identity class.
 /// </summary>
-public class UserDbContext
+public sealed class UserDbContext
     : IdentityDbContext<User, IdentityRole<Guid>, Guid>
 {
     private readonly IMediator _mediator;
